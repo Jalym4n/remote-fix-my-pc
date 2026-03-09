@@ -3,11 +3,11 @@ const Contact = () => {
     <section id="contact" className="px-6 md:px-20 py-20 md:py-24 bg-surface">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
-          <div className="text-[10px] tracking-[6px] text-faint uppercase mb-3">// reach me</div>
-          <div className="font-display text-[clamp(40px,5vw,60px)] text-foreground tracking-[2px] mb-8">
+          <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// reach me</div>
+          <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-8">
             Get in<br /><span className="text-green">Touch</span>
           </div>
-          <p className="text-xs text-dim leading-[2] tracking-[1px] mb-8">
+          <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-8">
             Describe the problem or just say hello. I'll get back to you within a few hours — usually much faster. Remote support available for anyone, anywhere.
           </p>
 
@@ -19,29 +19,29 @@ const Contact = () => {
               { icon: "🖥️", label: "Remote Support", val: "Anywhere — I'll guide you" },
               { icon: "🕐", label: "Hours", val: "Mon–Sat, 9am–7pm" },
             ].map((m) => (
-              <div key={m.label} className="flex items-center gap-4 p-3.5 bg-surface-2 border border-border hover:border-primary transition-colors">
-                <span className="text-base flex-shrink-0">{m.icon}</span>
+              <div key={m.label} className="flex items-center gap-4 p-4 bg-surface-2 border border-border hover:border-primary transition-colors">
+                <span className="text-lg flex-shrink-0">{m.icon}</span>
                 <div>
-                  <div className="text-[10px] tracking-[3px] text-dim uppercase">{m.label}</div>
-                  <div className="text-xs text-foreground tracking-[1px]">{m.val}</div>
+                  <div className="text-xs tracking-[2px] text-dim uppercase">{m.label}</div>
+                  <div className="text-sm text-foreground tracking-[0.5px]">{m.val}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col gap-3.5">
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[10px] tracking-[4px] text-faint uppercase">Your Name</label>
-            <input type="text" placeholder="John Smith" className="bg-surface-2 border border-border text-foreground font-mono text-xs p-3 outline-none focus:border-primary transition-colors tracking-[1px]" />
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
+            <label className="text-xs tracking-[3px] text-faint uppercase">Your Name</label>
+            <input type="text" placeholder="John Smith" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
           </div>
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[10px] tracking-[4px] text-faint uppercase">Email Address</label>
-            <input type="email" placeholder="john@example.com" className="bg-surface-2 border border-border text-foreground font-mono text-xs p-3 outline-none focus:border-primary transition-colors tracking-[1px]" />
+          <div className="flex flex-col gap-2">
+            <label className="text-xs tracking-[3px] text-faint uppercase">Email Address</label>
+            <input type="email" placeholder="john@example.com" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
           </div>
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[10px] tracking-[4px] text-faint uppercase">How Can I Help?</label>
-            <select className="bg-surface-2 border border-border text-foreground font-mono text-xs p-3 outline-none cursor-pointer tracking-[1px] focus:border-primary transition-colors appearance-none">
+          <div className="flex flex-col gap-2">
+            <label className="text-xs tracking-[3px] text-faint uppercase">How Can I Help?</label>
+            <select className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none cursor-pointer tracking-[0.5px] focus:border-primary transition-colors appearance-none">
               <option value="">Select a service...</option>
               <option>Remote Fix (Software Issue)</option>
               <option>House Visit Request</option>
@@ -54,11 +54,11 @@ const Contact = () => {
               <option>Something Else</option>
             </select>
           </div>
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[10px] tracking-[4px] text-faint uppercase">Describe the Problem</label>
-            <textarea placeholder="My laptop is running slow and makes a weird noise when it starts up..." className="bg-surface-2 border border-border text-foreground font-mono text-xs p-3 outline-none focus:border-primary transition-colors tracking-[1px] resize-none h-28" />
+          <div className="flex flex-col gap-2">
+            <label className="text-xs tracking-[3px] text-faint uppercase">Describe the Problem</label>
+            <textarea placeholder="My laptop is running slow and makes a weird noise when it starts up..." className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px] resize-none h-32" />
           </div>
-          <button className="w-full font-mono text-[11px] tracking-[5px] text-primary-foreground bg-primary py-3.5 uppercase cursor-pointer hover:bg-primary/80 transition-colors border-none">
+          <button className="w-full font-mono text-[13px] tracking-[3px] text-primary-foreground bg-primary py-4 uppercase cursor-pointer hover:bg-primary/80 transition-colors border-none">
             Send Message →
           </button>
         </div>
