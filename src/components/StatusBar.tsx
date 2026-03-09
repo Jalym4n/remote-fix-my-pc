@@ -10,10 +10,10 @@ const StatusBar = () => {
   return (
     <div className="bg-surface border-y border-border px-6 md:px-20 flex items-center gap-10 md:gap-16 overflow-x-auto">
       {items.map((item) => (
-        <div key={item.label} className="flex items-center gap-3 py-3.5 flex-shrink-0">
+        <div key={item.label} className="flex items-center gap-3 py-4 flex-shrink-0">
           <div className="w-1.5 h-1.5 bg-green rounded-full animate-pulse-dot" />
-          <span className="text-[10px] tracking-[3px] text-dim uppercase whitespace-nowrap">{item.label}</span>
-          <span className="text-[10px] tracking-[2px] text-foreground whitespace-nowrap">{item.value}</span>
+          <span className="text-xs tracking-[2px] text-dim uppercase whitespace-nowrap">{item.label}</span>
+          <span className="text-xs tracking-[1px] text-foreground whitespace-nowrap">{item.value}</span>
         </div>
       ))}
     </div>

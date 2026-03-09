@@ -16,8 +16,8 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="px-6 md:px-20 py-20 md:py-24 bg-surface">
-      <div className="text-[10px] tracking-[6px] text-faint uppercase mb-3">// client logs</div>
-      <div className="font-display text-[clamp(40px,5vw,60px)] text-foreground tracking-[2px] mb-12">
+      <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// client logs</div>
+      <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
         What People <span className="text-green">Say</span>
       </div>
 
@@ -27,11 +27,11 @@ const Testimonials = () => {
             <div className="font-display text-5xl text-primary leading-none opacity-40 mb-3">"</div>
             <div className="flex gap-1 mb-3.5">
               {Array.from({ length: 5 }).map((_, j) => (
-                <div key={j} className="w-2.5 h-2.5 bg-primary" style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
+                <div key={j} className="w-3 h-3 bg-primary" style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
               ))}
             </div>
-            <p className="text-xs text-dim leading-[2] tracking-[0.5px] mb-5">{t.text}</p>
-            <div className="text-[10px] tracking-[4px] text-faint uppercase">{t.name}</div>
+            <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">{t.text}</p>
+            <div className="text-xs tracking-[3px] text-faint uppercase">{t.name}</div>
           </div>
         ))}
       </div>

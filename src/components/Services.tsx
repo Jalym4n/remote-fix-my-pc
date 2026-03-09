@@ -10,19 +10,19 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="px-6 md:px-20 py-20 md:py-24">
-      <div className="text-[10px] tracking-[6px] text-faint uppercase mb-3">// services</div>
-      <div className="font-display text-[clamp(40px,5vw,60px)] text-foreground tracking-[2px] mb-12">
+      <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// services</div>
+      <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
         What I <span className="text-primary">Fix</span>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
         {services.map((s) => (
-          <div key={s.title} className="bg-surface p-8 relative overflow-hidden group transition-colors hover:bg-surface-2">
+          <div key={s.title} className="bg-surface p-9 relative overflow-hidden group transition-colors hover:bg-surface-2">
             <div className="absolute top-0 left-0 w-[2px] h-0 bg-primary transition-all duration-300 group-hover:h-full" />
-            <span className="text-3xl mb-4 block">{s.icon}</span>
-            <div className="font-display text-2xl tracking-[2px] text-foreground mb-3">{s.title}</div>
-            <p className="text-[11px] text-dim leading-[1.9] tracking-[1px]">{s.desc}</p>
-            <div className="text-[10px] tracking-[3px] text-primary mt-5 uppercase">{s.price}</div>
+            <span className="text-4xl mb-4 block">{s.icon}</span>
+            <div className="font-display text-[28px] tracking-[2px] text-foreground mb-3">{s.title}</div>
+            <p className="text-sm text-dim leading-relaxed tracking-[0.5px]">{s.desc}</p>
+            <div className="text-[13px] tracking-[2px] text-primary mt-5 uppercase">{s.price}</div>
           </div>
         ))}
       </div>
