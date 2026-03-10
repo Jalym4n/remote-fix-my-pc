@@ -1,6 +1,8 @@
 const RemoteSection = () => {
   return (
-    <section id="remote" className="px-6 md:px-20 py-20 md:py-24 bg-background">
+    <section id="remote" className="px-6 md:px-20 py-20 md:py-24 bg-background relative bg-noise">
+      <div className="absolute inset-0 glow-red pointer-events-none" />
+      <div className="absolute inset-0 glow-green pointer-events-none" />
       <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// remote support</div>
       <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-6">
         Can't Come to <span className="text-primary">Us?</span><br />

@@ -7,7 +7,8 @@ const errors = [
 
 const ErrorZone = () => {
   return (
-    <section className="px-6 md:px-20 py-20 md:py-24 bg-background">
+    <section className="px-6 md:px-20 py-20 md:py-24 bg-background relative bg-noise">
+      <div className="absolute inset-0 glow-red pointer-events-none" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// common errors</div>

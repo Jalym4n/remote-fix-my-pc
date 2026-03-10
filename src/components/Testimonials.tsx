@@ -15,7 +15,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="px-6 md:px-20 py-20 md:py-24 bg-surface">
+    <section className="px-6 md:px-20 py-20 md:py-24 bg-surface relative bg-noise bg-circuit">
       <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// client logs</div>
       <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
         What People <span className="text-green">Say</span>

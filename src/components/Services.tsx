@@ -9,7 +9,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="px-6 md:px-20 py-20 md:py-24">
+    <section id="services" className="px-6 md:px-20 py-20 md:py-24 relative bg-noise bg-circuit">
       <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// services</div>
       <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
         What I <span className="text-primary">Fix</span>
