@@ -1,6 +1,7 @@
 const Contact = () => {
   return (
-    <section id="contact" className="px-6 md:px-20 py-20 md:py-24 bg-surface">
+    <section id="contact" className="px-6 md:px-20 py-20 md:py-24 bg-surface relative bg-noise bg-circuit">
+      <div className="absolute inset-0 glow-bottom pointer-events-none" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
           <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// reach me</div>

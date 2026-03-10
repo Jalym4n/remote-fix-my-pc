@@ -1,15 +1,13 @@
 const Hero = () => {
   return (
-    <section className="w-full min-h-screen bg-surface relative overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 md:px-20 pt-28 pb-20 gap-10 lg:gap-16">
-      {/* Grid bg */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+    <section className="w-full min-h-screen bg-surface bg-noise relative overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 md:px-20 pt-28 pb-20 gap-10 lg:gap-16">
+      {/* Circuit grid bg */}
+      <div className="absolute inset-0 z-0 bg-circuit" />
+      {/* Red glow top-left */}
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 15% 30%, hsla(0,100%,40%,0.07) 0%, transparent 50%)" }} />
+      {/* Green glow bottom-right */}
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 85% 80%, hsla(145,100%,40%,0.04) 0%, transparent 50%)" }} />
+      {/* Vignette */}
       <div className="absolute inset-0 z-[1] pointer-events-none" style={{ background: "radial-gradient(ellipse at center, transparent 30%, hsl(0 0% 5%) 100%)" }} />
 
       <div className="flex-1 z-[2] animate-fade-up">
