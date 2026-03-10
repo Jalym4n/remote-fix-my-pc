@@ -3,12 +3,14 @@ const Hero = () => {
     <section className="w-full min-h-screen bg-surface bg-noise relative overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 md:px-20 pt-28 pb-20 gap-10 lg:gap-16">
       {/* Circuit grid bg */}
       <div className="absolute inset-0 z-0 bg-circuit" />
-      {/* Red glow top-left */}
-      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 15% 30%, hsla(0,100%,40%,0.07) 0%, transparent 50%)" }} />
+      {/* Red glow top-left — stronger */}
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 15% 30%, hsla(0,100%,40%,0.15) 0%, transparent 50%)" }} />
       {/* Green glow bottom-right */}
-      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 85% 80%, hsla(145,100%,40%,0.04) 0%, transparent 50%)" }} />
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 85% 80%, hsla(145,100%,40%,0.10) 0%, transparent 50%)" }} />
+      {/* Accent stripe */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/30 z-[1]" />
       {/* Vignette */}
-      <div className="absolute inset-0 z-[1] pointer-events-none" style={{ background: "radial-gradient(ellipse at center, transparent 30%, hsl(0 0% 5%) 100%)" }} />
+      <div className="absolute inset-0 z-[1] pointer-events-none" style={{ background: "radial-gradient(ellipse at center, transparent 20%, hsl(0 0% 5%) 100%)" }} />
 
       <div className="flex-1 z-[2] animate-fade-up">
         <div className="text-[13px] tracking-[4px] text-faint uppercase mb-4">
