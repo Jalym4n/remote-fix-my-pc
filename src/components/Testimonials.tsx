@@ -1,3 +1,5 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 const testimonials = [
   {
     text: "My nan couldn't leave the house and her laptop was riddled with viruses. He FaceTimed her, walked her through connecting, and had it sorted within the hour. Absolute legend.",
@@ -14,26 +16,31 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
     <section className="px-6 md:px-20 py-20 md:py-24 bg-surface relative bg-noise bg-circuit">
-      <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// client logs</div>
-      <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
-        What People <span className="text-green">Say</span>
-      </div>
+      <div className="absolute inset-0 glow-green pointer-events-none" />
+      <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
+        <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// client logs</div>
+        <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
+          What People <span className="text-green">Say</span>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
-        {testimonials.map((t, i) => (
-          <div key={i} className="bg-background p-8">
-            <div className="font-display text-5xl text-primary leading-none opacity-40 mb-3">"</div>
-            <div className="flex gap-1 mb-3.5">
-              {Array.from({ length: 5 }).map((_, j) => (
-                <div key={j} className="w-3 h-3 bg-primary" style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-background p-8">
+              <div className="font-display text-5xl text-primary leading-none opacity-40 mb-3">"</div>
+              <div className="flex gap-1 mb-3.5">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <div key={j} className="w-3 h-3 bg-primary" style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
+                ))}
+              </div>
+              <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">{t.text}</p>
+              <div className="text-xs tracking-[3px] text-faint uppercase">{t.name}</div>
             </div>
-            <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">{t.text}</p>
-            <div className="text-xs tracking-[3px] text-faint uppercase">{t.name}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
