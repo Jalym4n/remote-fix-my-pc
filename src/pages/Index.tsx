@@ -23,11 +23,11 @@ const Index = () => {
       <TrustBar />
       <Divider />
       <ServiceOptions />
-      <CTABand headline="*BitLocker* locked you out?" subtext="I recover access on eligible devices — remotely, step by step. No fix, no fee." variant="primary" />
+      <CTABand headline="*BitLocker* recovery on eligible devices" subtext="In-person service required — house visit or drop-off. No fix, no fee." variant="primary" />
       <TopProblems />
       <Divider />
       <WhoItsFor />
-      <CTABand headline="Stuck at home? *I come to you.*" subtext="Remote screen-share or house visit. I'll walk you through everything — even if you've never done this before." variant="green" />
+      <CTABand headline="Cannot travel? *We come to you.*" subtext="Remote screen-share for software issues, or a house visit for hands-on work. Guided support at every step." variant="green" />
       <FAQ />
       <Divider />
       <About />
@@ -35,7 +35,7 @@ const Index = () => {
       <Testimonials />
       <Divider />
       <Contact />
-      <CTABand headline="Don't wait — *get help now.*" subtext="Call, text, or request a free diagnosis. Same-day and rush service available." variant="primary" />
+      <CTABand headline="Ready to *get started?*" subtext="Call, text, or request a free diagnosis. Same-day and priority service available." variant="primary" />
       <Footer />
     </div>
   );

@@ -3,28 +3,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "How does remote help actually work?",
-    a: "I'll video-call you first (FaceTime, WhatsApp, or regular call) and walk you through downloading a simple screen-sharing app. Once connected, I can see your screen and control your mouse/keyboard to fix the problem — you watch the entire time. Even if you've never done anything like this, I'll guide you through every click.",
+    q: "How does remote support work?",
+    a: "A video call is arranged first (via FaceTime, WhatsApp, or a standard phone call) to guide you through downloading a secure screen-sharing application. Once connected, the technician can view your screen and operate your device to resolve the issue — you observe the entire process. Full guidance is provided regardless of technical experience.",
   },
   {
-    q: "How does BitLocker recovery work on eligible devices?",
-    a: "BitLocker is a Windows security feature that can lock you out of your own PC after updates, resets, or hardware changes. On eligible devices, I can recover your access remotely by walking you through the recovery process. If remote recovery isn't possible, I'll arrange a house visit or drop-off. You only pay if I fix it.",
+    q: "How does BitLocker recovery work?",
+    a: "BitLocker is a Windows security feature that can lock users out of their own device following updates, resets, or hardware changes. On eligible devices, access can be recovered via an in-person appointment — either a house visit or drop-off. BitLocker recovery is not available as a remote service due to the nature of the process. You only pay if the issue is resolved.",
   },
   {
-    q: "What's your service area for house visits?",
-    a: "I cover a reasonable radius for in-home visits. If you're further out, remote support is always available — I can fix most software issues without being physically present. Get in touch with your postcode and I'll let you know straight away.",
+    q: "What is the service area for house visits?",
+    a: "House visits are available within a reasonable radius. For clients further afield, remote support covers most software-related issues without requiring physical presence. Please provide your postcode when enquiring and availability will be confirmed promptly.",
   },
   {
-    q: "Is rush / same-day service really available?",
-    a: "Yes. If I have availability, I can often help the same day you call — especially for remote fixes. For urgent situations (locked out of your work PC, business-critical issue), let me know and I'll prioritise you.",
+    q: "Is same-day or rush service available?",
+    a: "Yes. Subject to availability, same-day appointments can often be accommodated — particularly for remote support. For urgent matters such as a locked work device or business-critical issue, priority scheduling is available upon request.",
   },
   {
-    q: "What does 'no fix, no fee' actually mean?",
-    a: "Exactly what it says. If I can't solve your problem, you don't pay a penny. The diagnosis is free. If you go ahead with the repair, the diagnosis fee is waived entirely. Zero risk to you.",
+    q: "What does 'no fix, no fee' mean in practice?",
+    a: "If the issue cannot be resolved, no charge is made. Diagnosis is provided free of charge. Should you proceed with the repair, the diagnosis fee is waived entirely. There is no financial risk to the client.",
   },
   {
-    q: "I'm not tech-savvy at all — can you still help me?",
-    a: "Absolutely — that's who I primarily help. I speak plain English, I'm extremely patient, and I'll walk you through everything step by step. Many of my clients are seniors or people who have never done remote help before. You don't need to understand computers. That's my job.",
+    q: "What if I have limited technical knowledge?",
+    a: "The majority of our clients have limited technical experience, and the service is designed accordingly. All communication is in plain language, every step is guided, and patience is guaranteed. Prior technical knowledge is not required — that is our responsibility.",
   },
 ];
 
@@ -36,7 +36,7 @@ const FAQ = () => {
     <section id="faq" className="px-6 md:px-20 py-20 md:py-24 bg-background relative bg-noise">
       <div className="absolute inset-0 glow-center pointer-events-none" />
       <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
-        <div className="text-[14px] tracking-[4px] text-faint uppercase mb-3">// questions</div>
+        <div className="text-[14px] tracking-[4px] text-faint uppercase mb-3">// frequently asked</div>
         <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
           Common <span className="text-primary">Questions</span>
         </div>

@@ -6,7 +6,7 @@ interface CTABandProps {
   variant?: "primary" | "green";
 }
 
-const CTABand = ({ headline = "Ready to get your PC fixed?", subtext = "Call, text, or request a free diagnosis. No fix, no fee — guaranteed.", variant = "primary" }: CTABandProps) => {
+const CTABand = ({ headline = "Ready to resolve your issue?", subtext = "Call, text, or request a free diagnosis. No fix, no fee — guaranteed.", variant = "primary" }: CTABandProps) => {
   const { ref, isVisible } = useScrollReveal();
   const accentClass = variant === "green" ? "text-green" : "text-primary";
 

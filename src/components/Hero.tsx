@@ -9,7 +9,7 @@ const Hero = () => {
 
       <div className="flex-1 z-[2] animate-fade-up max-w-2xl">
         <div className="text-[14px] tracking-[4px] text-faint uppercase mb-5">
-          // Emergency Computer Rescue — Remote & On-Site
+          // Professional Computer Repair — Remote & On-Site
         </div>
 
         <h1 className="font-display text-[clamp(42px,6vw,72px)] leading-[1.05] text-foreground tracking-[2px] mb-5">
@@ -18,14 +18,14 @@ const Hero = () => {
         </h1>
 
         <p className="text-base text-dim tracking-[0.5px] leading-relaxed max-w-lg mb-6">
-          I recover BitLocker-locked PCs on eligible devices, fix broken computers, and rescue people who are stuck at home — all via remote screen-share or house visit. <strong className="text-foreground font-normal">No fix, no fee.</strong>
+          Professional BitLocker recovery on eligible devices, comprehensive computer repair, and guided remote support for clients who cannot travel. <strong className="text-foreground font-normal">No fix, no fee.</strong>
         </p>
 
         {/* Urgency box */}
         <div className="border border-primary/40 bg-primary/5 px-5 py-4 mb-8 max-w-lg">
-          <span className="text-primary font-display text-3xl tracking-[2px]">YOUR PC IS LOCKED OR BROKEN?</span>
+          <span className="text-primary font-display text-3xl tracking-[2px]">PC LOCKED, BROKEN, OR UNUSABLE?</span>
           <p className="text-sm text-dim tracking-[0.5px] mt-2 leading-relaxed">
-            Don't panic. Even if you're elderly, immobile, or have never done anything like this before — I'll walk you through everything step by step via video call, then fix it remotely.
+            Whether you require BitLocker recovery (in-person service on eligible devices), a house visit, or remote assistance for software issues — help is available today. Clear guidance provided at every step.
           </p>
         </div>
 
@@ -54,11 +54,11 @@ const Hero = () => {
           <div className="p-6 flex gap-4 items-start border-b border-border">
             <span className="text-4xl flex-shrink-0">🔒</span>
             <div>
-              <div className="text-sm text-foreground font-bold mb-2 tracking-[0.5px]">BitLocker has locked your PC.</div>
+              <div className="text-sm text-foreground font-bold mb-2 tracking-[0.5px]">BitLocker has locked this device.</div>
               <div className="text-[14px] text-dim leading-relaxed">
-                Don't worry — <strong className="text-foreground/80 font-normal">ALTCTRL can recover your access remotely</strong> on eligible devices, even if you've never done remote help before.
+                <strong className="text-foreground/80 font-normal">ALTCTRL provides BitLocker recovery</strong> on eligible devices via in-person service or drop-off. Contact us to arrange an appointment.
               </div>
-              <div className="text-xs text-faint mt-3 tracking-[1px]">RECOVERY_MODE — 0x000_ALTCTRL_FIX</div>
+              <div className="text-xs text-faint mt-3 tracking-[1px]">RECOVERY_MODE — IN-PERSON SERVICE REQUIRED</div>
             </div>
           </div>
           <div className="p-3 flex justify-center gap-3">
