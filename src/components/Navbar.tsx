@@ -12,7 +12,7 @@ const Navbar = () => {
       </a>
 
       <div className="hidden md:flex items-center gap-9">
-        {["Services", "Remote", "About", "Process", "Contact"].map((item) => (
+        {["Services", "FAQ", "About", "Contact"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -22,10 +22,10 @@ const Navbar = () => {
           </a>
         ))}
         <a
-          href="#contact"
+          href="tel:+447000000000"
           className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors"
         >
-          Get Help
+          📞 Call Now
         </a>
       </div>
 
@@ -38,7 +38,7 @@ const Navbar = () => {
 
       {menuOpen && (
         <div className="absolute top-14 left-0 right-0 bg-background border-b border-border flex flex-col items-center gap-5 py-6 md:hidden">
-          {["Services", "Remote", "About", "Process", "Contact"].map((item) => (
+          {["Services", "FAQ", "About", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -48,6 +48,9 @@ const Navbar = () => {
               {item}
             </a>
           ))}
+          <a href="tel:+447000000000" className="text-[14px] tracking-[2px] text-primary uppercase" onClick={() => setMenuOpen(false)}>
+            📞 Call Now
+          </a>
         </div>
       )}
     </nav>
