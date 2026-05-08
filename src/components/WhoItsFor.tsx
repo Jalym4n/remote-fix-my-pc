@@ -2,24 +2,24 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const audiences = [
   {
-    icon: "👴",
-    title: "Seniors & Elderly Clients",
-    desc: "Unable to leave the house or unfamiliar with remote support? A video call will be arranged to guide you through the connection process — patiently, clearly, and without jargon.",
+    icon: "🏥",
+    title: "Independent Practices",
+    desc: "Small and mid-sized clinics seeking enterprise-grade AI assistance — clinical documentation, intake automation, and guideline-grounded Q&A — without enterprise-scale overhead.",
   },
   {
-    icon: "♿",
-    title: "Housebound Individuals",
-    desc: "Physical limitations should not prevent access to reliable computer repair. Remote support is available for software issues, or a house visit can be arranged for hands-on work.",
+    icon: "🔬",
+    title: "Research Groups",
+    desc: "Academic and translational research teams requiring secure cohort discovery, literature synthesis, and evaluation harnesses for domain-specific model development.",
   },
   {
-    icon: "⏰",
-    title: "Busy Professionals",
-    desc: "Unable to visit a repair shop during working hours? Remote sessions can be scheduled around your availability, including evenings. Rush and same-day service is available on request.",
+    icon: "💼",
+    title: "Health-Tech Founders",
+    desc: "Early-stage teams building clinical products who need a compliance-aware infrastructure partner to accelerate from prototype to production deployment.",
   },
   {
-    icon: "📋",
-    title: "Non-Technical Users",
-    desc: "No technical knowledge is required. Every step is explained in plain language, and the entire process is guided from start to finish. Understanding computers is our responsibility, not yours.",
+    icon: "🛠️",
+    title: "Enterprise IT & Security",
+    desc: "Organisations integrating LLMs into existing clinical systems with strict requirements around tenancy, data residency, audit logging, and least-privilege access.",
   },
 ];
 
@@ -30,12 +30,12 @@ const WhoItsFor = () => {
     <section className="px-6 md:px-20 py-20 md:py-24 bg-surface relative bg-noise bg-circuit">
       <div className="absolute inset-0 glow-green pointer-events-none" />
       <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
-        <div className="text-[14px] tracking-[4px] text-faint uppercase mb-3">// who we help</div>
+        <div className="text-[14px] tracking-[4px] text-faint uppercase mb-3">// design partners</div>
         <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-4">
-          Designed for Those Who<br /><span className="text-green">Need It Most</span>
+          Built for Teams That<br /><span className="text-green">Take Compliance Seriously</span>
         </div>
-        <p className="text-sm text-dim tracking-[0.5px] mb-12 max-w-lg">
-          Our service is built around clients who cannot easily visit a repair shop — or are unsure where to begin.
+        <p className="text-sm text-dim tracking-[0.5px] mb-12 max-w-xl">
+          We work with a small number of design partners to ensure each deployment is tailored, supported, and clinically meaningful.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border">

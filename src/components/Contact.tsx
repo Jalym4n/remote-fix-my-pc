@@ -9,21 +9,21 @@ const Contact = () => {
       <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// reach me</div>
+            <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// request access</div>
             <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-8">
-              Get in<br /><span className="text-green">Touch</span>
+              Beta &amp;<br /><span className="text-green">Design Partners</span>
             </div>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-8">
-              Describe the problem or just say hello. I'll get back to you within a few hours — usually much faster. Remote support available for anyone, anywhere.
+              Our Beta programme is open to a limited number of clinical and research teams. Share a short description of your workflow and target environment, and a member of the lab will be in touch.
             </p>
 
             <div className="flex flex-col gap-4">
               {[
-                { icon: "📧", label: "Email", val: "hello@altctrl.co.uk" },
-                { icon: "📱", label: "Phone / Text", val: "Available on request" },
-                { icon: "🏠", label: "House Visits", val: "Within reasonable area" },
-                { icon: "🖥️", label: "Remote Support", val: "Anywhere — I'll guide you" },
-                { icon: "🕐", label: "Hours", val: "Mon–Sat, 9am–7pm" },
+                { icon: "📧", label: "Direct", val: "jaleed01@altctrl.run" },
+                { icon: "🌐", label: "Domain", val: "altctrl.run" },
+                { icon: "☁️", label: "Deployment", val: "GCP · AWS · Azure" },
+                { icon: "🛡️", label: "Compliance", val: "HIPAA-aligned · SOC2-ready" },
+                { icon: "🕐", label: "Response", val: "Within one business day" },
               ].map((m) => (
                 <div key={m.label} className="flex items-center gap-4 p-4 bg-surface-2 border border-border hover:border-primary transition-colors">
                   <span className="text-lg flex-shrink-0">{m.icon}</span>
@@ -38,34 +38,35 @@ const Contact = () => {
 
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <label className="text-xs tracking-[3px] text-faint uppercase">Your Name</label>
-              <input type="text" placeholder="John Smith" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
+              <label className="text-xs tracking-[3px] text-faint uppercase">Full Name</label>
+              <input type="text" placeholder="Dr. Jane Smith" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs tracking-[3px] text-faint uppercase">Email Address</label>
-              <input type="email" placeholder="john@example.com" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
+              <label className="text-xs tracking-[3px] text-faint uppercase">Work Email</label>
+              <input type="email" placeholder="jane@clinic.org" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs tracking-[3px] text-faint uppercase">How Can I Help?</label>
+              <label className="text-xs tracking-[3px] text-faint uppercase">Organisation</label>
+              <input type="text" placeholder="Practice, hospital, or research group" className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px]" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="text-xs tracking-[3px] text-faint uppercase">Area of Interest</label>
               <select className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none cursor-pointer tracking-[0.5px] focus:border-primary transition-colors appearance-none">
-                <option value="">Select a service...</option>
-                <option>Remote Fix (Software Issue)</option>
-                <option>House Visit Request</option>
-                <option>Laptop Repair</option>
-                <option>Desktop / PC</option>
-                <option>Virus / Malware Removal</option>
-                <option>Data Recovery</option>
-                <option>Speed / Tune-Up</option>
-                <option>Network / Wi-Fi</option>
-                <option>Something Else</option>
+                <option value="">Select an area...</option>
+                <option>Patient triage / intake</option>
+                <option>Clinical documentation</option>
+                <option>Guideline-grounded Q&amp;A</option>
+                <option>Research / cohort discovery</option>
+                <option>Custom fine-tuning</option>
+                <option>Architecture review</option>
               </select>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs tracking-[3px] text-faint uppercase">Describe the Problem</label>
-              <textarea placeholder="My laptop is running slow and makes a weird noise when it starts up..." className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px] resize-none h-32" />
+              <label className="text-xs tracking-[3px] text-faint uppercase">Workflow &amp; Environment</label>
+              <textarea placeholder="Briefly describe your workflow, target cloud provider, and any compliance constraints..." className="bg-surface-2 border border-border text-foreground font-mono text-sm p-3.5 outline-none focus:border-primary transition-colors tracking-[0.5px] resize-none h-32" />
             </div>
             <button className="w-full font-mono text-[13px] tracking-[3px] text-primary-foreground bg-primary py-4 uppercase cursor-pointer hover:bg-primary/80 transition-colors border-none">
-              Send Message →
+              Request Beta Access →
             </button>
           </div>
         </div>

@@ -1,17 +1,20 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const testimonials = [
+const items = [
   {
-    text: "My nan couldn't leave the house and her laptop was riddled with viruses. He FaceTimed her, walked her through connecting, and had it sorted within the hour. Absolute legend.",
-    name: "— J. Williams, Remote Client",
+    label: "Architecture",
+    title: "Tenant-Isolated by Default",
+    text: "Every deployment is provisioned inside the customer's own cloud tenancy — no shared inference layer, no cross-tenant data, no surprises in a security review.",
   },
   {
-    text: "Came to my house, diagnosed the issue, gave me a fair price on the spot. Laptop was fixed before he left. No fix no fee policy gave me complete peace of mind.",
-    name: "— R. Ahmed, House Visit",
+    label: "Evaluation",
+    title: "Measured, Not Marketed",
+    text: "Models are continuously evaluated against clinical benchmarks for faithfulness, citation coverage, and hallucination rate. Results are reported to design partners on every release.",
   },
   {
-    text: "Three shops quoted me over £200. ALTCTRL beat the cheapest by more than 15% and did a better job. Will never go anywhere else.",
-    name: "— T. Brennan, Price Beat",
+    label: "Operations",
+    title: "Reproducible & Audited",
+    text: "All infrastructure is defined as code and version-controlled. Audit logs, IAM policy, and model lineage are queryable artefacts — not tribal knowledge.",
   },
 ];
 
@@ -22,22 +25,17 @@ const Testimonials = () => {
     <section className="px-6 md:px-20 py-20 md:py-24 bg-surface relative bg-noise bg-circuit">
       <div className="absolute inset-0 glow-green pointer-events-none" />
       <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
-        <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// client logs</div>
+        <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// engineering principles</div>
         <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
-          What People <span className="text-green">Say</span>
+          How We <span className="text-green">Operate</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
-          {testimonials.map((t, i) => (
+          {items.map((t, i) => (
             <div key={i} className="bg-background p-8">
-              <div className="font-display text-5xl text-primary leading-none opacity-40 mb-3">"</div>
-              <div className="flex gap-1 mb-3.5">
-                {Array.from({ length: 5 }).map((_, j) => (
-                  <div key={j} className="w-3 h-3 bg-primary" style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
-                ))}
-              </div>
-              <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">{t.text}</p>
-              <div className="text-xs tracking-[3px] text-faint uppercase">{t.name}</div>
+              <div className="text-xs tracking-[3px] text-green uppercase mb-3">// {t.label}</div>
+              <div className="font-display text-[24px] tracking-[2px] text-foreground mb-4">{t.title}</div>
+              <p className="text-sm text-dim leading-relaxed tracking-[0.5px]">{t.text}</p>
             </div>
           ))}
         </div>
