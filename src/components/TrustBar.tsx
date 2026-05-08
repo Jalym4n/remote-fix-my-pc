@@ -1,10 +1,10 @@
 const TrustBar = () => {
   const items = [
-    { icon: "✅", text: "No fix, no fee" },
-    { icon: "🧾", text: "Diagnosis waived if repair proceeds" },
-    { icon: "💰", text: "We beat written quotes by 15%" },
-    { icon: "⚡", text: "Rush / same-day available" },
-    { icon: "🖥️", text: "Remote help — anywhere in the UK" },
+    { icon: "🛡️", text: "HIPAA-aligned architecture" },
+    { icon: "🔐", text: "SOC2-ready controls" },
+    { icon: "☁️", text: "Cloud-native (GCP · AWS · Azure)" },
+    { icon: "🧠", text: "Clinical LLM fine-tuning" },
+    { icon: "⚙️", text: "Infrastructure-as-Code (Terraform)" },
   ];
 
   return (

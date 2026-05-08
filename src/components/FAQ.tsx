@@ -3,28 +3,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "How does remote support work?",
-    a: "A video call is arranged first (via FaceTime, WhatsApp, or a standard phone call) to guide you through downloading a secure screen-sharing application. Once connected, the technician can view your screen and operate your device to resolve the issue — you observe the entire process. Full guidance is provided regardless of technical experience.",
+    q: "Are ALTCTRL systems regulated medical devices?",
+    a: "No. Our platforms are clinical decision-support and workflow tools operated under clinician-in-the-loop supervision. They are not intended to provide autonomous diagnosis or treatment and are not registered as medical devices.",
   },
   {
-    q: "How does BitLocker recovery work?",
-    a: "BitLocker is a Windows security feature that can lock users out of their own device following updates, resets, or hardware changes. On eligible devices, access can be recovered via an in-person appointment — either a house visit or drop-off. BitLocker recovery is not available as a remote service due to the nature of the process. You only pay if the issue is resolved.",
+    q: "How is protected health information (PHI) handled?",
+    a: "All inference, retrieval, and storage occur within isolated, customer-tenanted environments — typically a dedicated VPC inside the customer's own cloud account. There is no data egress to third-party model providers, audit logs are enabled by default, and least-privilege IAM is enforced via Infrastructure-as-Code.",
   },
   {
-    q: "What is the service area for house visits?",
-    a: "House visits are available within a reasonable radius. For clients further afield, remote support covers most software-related issues without requiring physical presence. Please provide your postcode when enquiring and availability will be confirmed promptly.",
+    q: "Which cloud providers do you support?",
+    a: "Deployments are multi-cloud by design: Google Cloud (Vertex AI, GKE), AWS (Bedrock, SageMaker, EKS), and Microsoft Azure (Azure OpenAI, AI Studio, AKS). All infrastructure is provisioned via Terraform for reproducibility and auditability.",
   },
   {
-    q: "Is same-day or rush service available?",
-    a: "Yes. Subject to availability, same-day appointments can often be accommodated — particularly for remote support. For urgent matters such as a locked work device or business-critical issue, priority scheduling is available upon request.",
+    q: "Which models do you fine-tune?",
+    a: "We focus on open-weight models suitable for private deployment — primarily Gemma 2, Llama-3, and Mistral families — using parameter-efficient techniques (LoRA / QLoRA). For managed inference, we also integrate with Gemini, Claude (via Bedrock), and Azure OpenAI where customer policy permits.",
   },
   {
-    q: "What does 'no fix, no fee' mean in practice?",
-    a: "If the issue cannot be resolved, no charge is made. Diagnosis is provided free of charge. Should you proceed with the repair, the diagnosis fee is waived entirely. There is no financial risk to the client.",
+    q: "What is the engagement model?",
+    a: "We work with a small number of design partners under a Beta programme. Engagements typically begin with a scoped architecture review, followed by a pilot deployment and an evaluation phase before broader rollout. Capacity is intentionally limited.",
   },
   {
-    q: "What if I have limited technical knowledge?",
-    a: "The majority of our clients have limited technical experience, and the service is designed accordingly. All communication is in plain language, every step is guided, and patience is guaranteed. Prior technical knowledge is not required — that is our responsibility.",
+    q: "How do I request access?",
+    a: "Use the contact form, or email the team directly. Please include a short description of your clinical workflow, target deployment environment (cloud provider and region), and any compliance constraints relevant to your organisation.",
   },
 ];
 
@@ -53,7 +53,7 @@ const FAQ = () => {
               </button>
               <div
                 className="overflow-hidden transition-all duration-300"
-                style={{ maxHeight: open === i ? "300px" : "0px", opacity: open === i ? 1 : 0 }}
+                style={{ maxHeight: open === i ? "400px" : "0px", opacity: open === i ? 1 : 0 }}
               >
                 <p className="text-sm text-dim leading-relaxed tracking-[0.5px] pb-6 pr-8">{faq.a}</p>
               </div>

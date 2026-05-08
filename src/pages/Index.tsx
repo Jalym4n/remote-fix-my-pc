@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import CTABand from "@/components/CTABand";
 import ServiceOptions from "@/components/ServiceOptions";
+import TechStack from "@/components/TechStack";
 import TopProblems from "@/components/TopProblems";
 import WhoItsFor from "@/components/WhoItsFor";
 import FAQ from "@/components/FAQ";
@@ -23,19 +24,21 @@ const Index = () => {
       <TrustBar />
       <Divider />
       <ServiceOptions />
-      <CTABand headline="*BitLocker* recovery on eligible devices" subtext="In-person service required — house visit or drop-off. No fix, no fee." variant="primary" />
+      <CTABand headline="Clinical *LLM fine-tuning* on your infrastructure" subtext="Open-weight models, parameter-efficient training, deployed inside your cloud tenancy." variant="primary" />
+      <TechStack />
+      <Divider />
       <TopProblems />
       <Divider />
       <WhoItsFor />
-      <CTABand headline="Cannot travel? *We come to you.*" subtext="Remote screen-share for software issues, or a house visit for hands-on work. Guided support at every step." variant="green" />
-      <FAQ />
+      <CTABand headline="A *small lab.* Selective engagements." subtext="Beta access is granted on a rolling basis to qualified design partners." variant="green" />
+      <Testimonials />
       <Divider />
       <About />
       <Divider />
-      <Testimonials />
+      <FAQ />
       <Divider />
       <Contact />
-      <CTABand headline="Ready to *get started?*" subtext="Call, text, or request a free diagnosis. Same-day and priority service available." variant="primary" />
+      <CTABand headline="Build with *ALTCTRL Solutions.*" subtext="Request Beta access or contact the lab directly at jaleed01@altctrl.run." variant="primary" />
       <Footer />
     </div>
   );

@@ -2,31 +2,31 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const options = [
   {
-    icon: "🔒",
-    title: "BitLocker Recovery",
+    icon: "🧬",
+    title: "Clinical LLM Fine-Tuning",
     highlight: true,
-    desc: "Locked out of your PC by BitLocker? This service requires in-person access — either via a house visit or drop-off. On eligible devices, access can typically be restored the same day. Not available remotely.",
-    tags: ["In-person only", "Eligible devices", "Same-day available"],
-    note: "Requires physical access to the device. Not available via remote support.",
-    cta: "House visit or drop-off required",
+    desc: "Domain adaptation of open-weight models (Gemma, Llama-3, Mistral) on de-identified clinical corpora. Parameter-efficient fine-tuning (LoRA / QLoRA) with rigorous evaluation against medical benchmarks.",
+    tags: ["Gemma · Llama-3", "LoRA / QLoRA", "Clinical eval"],
+    note: "Training pipelines deployed on Vertex AI, SageMaker, or Azure ML.",
+    cta: "Core capability",
+  },
+  {
+    icon: "🔎",
+    title: "Secure Data Vectorization",
+    highlight: false,
+    desc: "Production-grade RAG pipelines for clinical knowledge bases — guideline ingestion, chunking, embeddings, and hybrid retrieval — within isolated, audit-logged environments designed for PHI workloads.",
+    tags: ["pgvector · Vertex AI Search", "Hybrid retrieval", "PHI isolation"],
+    note: null,
+    cta: "Deployed inside customer VPC",
   },
   {
     icon: "🖥️",
-    title: "Remote Support",
+    title: "Edge & Resilience Engineering",
     highlight: false,
-    desc: "For software issues, virus removal, slow performance, and general troubleshooting. A secure screen-sharing session is established via video call — clear guidance is provided throughout, regardless of technical experience.",
-    tags: ["Virus removal", "Slow PC", "Software issues", "Setup help"],
+    desc: "Optimisation of edge-compute hardware for medical deployments — on-prem inference nodes, GPU provisioning, and resilient failover for environments where latency, uptime, and data locality are non-negotiable.",
+    tags: ["NVIDIA L4 / A100", "On-prem inference", "Failover & HA"],
     note: null,
-    cta: "Available anywhere — no travel required",
-  },
-  {
-    icon: "🏠",
-    title: "In-Home Visit / Drop-Off",
-    highlight: false,
-    desc: "For hardware repairs, complex diagnostics, or any issue requiring physical access. All tools and equipment provided on-site. Drop-off is also available for faster turnaround on component work.",
-    tags: ["Hardware repair", "Full diagnostics", "Network setup", "Upgrades"],
-    note: null,
-    cta: "Within reasonable service area",
+    cta: "Hardware-aware deployment",
   },
 ];
 
@@ -37,9 +37,9 @@ const ServiceOptions = () => {
     <section id="services" className="px-6 md:px-20 py-20 md:py-24 relative bg-noise bg-circuit">
       <div className="absolute inset-0 glow-green pointer-events-none" />
       <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
-        <div className="text-[14px] tracking-[4px] text-faint uppercase mb-3">// service options</div>
+        <div className="text-[14px] tracking-[4px] text-faint uppercase mb-3">// capabilities</div>
         <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-12">
-          How We Can <span className="text-primary">Help</span>
+          What We <span className="text-primary">Build</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-border border border-border">
@@ -47,11 +47,11 @@ const ServiceOptions = () => {
             <div key={o.title} className={`bg-surface p-8 md:p-10 relative overflow-hidden group transition-colors hover:bg-surface-2 ${o.highlight ? "border-l-2 border-l-primary" : ""}`}>
               {o.highlight && (
                 <div className="absolute top-3 right-3 bg-primary/10 border border-primary/30 px-3 py-1">
-                  <span className="text-xs tracking-[2px] text-primary uppercase font-medium">★ #1 Service</span>
+                  <span className="text-xs tracking-[2px] text-primary uppercase font-medium">★ Core</span>
                 </div>
               )}
               <span className="text-4xl mb-5 block">{o.icon}</span>
-              <div className="font-display text-[32px] tracking-[2px] text-foreground mb-4">{o.title}</div>
+              <div className="font-display text-[28px] tracking-[2px] text-foreground mb-4">{o.title}</div>
               <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">{o.desc}</p>
 
               <div className="flex flex-wrap gap-2 mb-4">

@@ -9,64 +9,65 @@ const Hero = () => {
 
       <div className="flex-1 z-[2] animate-fade-up max-w-2xl">
         <div className="text-[14px] tracking-[4px] text-faint uppercase mb-5">
-          // Professional Computer Repair — Remote & On-Site
+          // ALTCTRL Solutions — Clinical AI Infrastructure
         </div>
 
         <h1 className="font-display text-[clamp(42px,6vw,72px)] leading-[1.05] text-foreground tracking-[2px] mb-5">
-          Locked out by <span className="text-primary">BitLocker?</span><br />
-          Need urgent <span className="text-green">computer help?</span>
+          Next-Gen AI Infrastructure for <span className="text-primary">Modern Healthcare.</span>
         </h1>
 
         <p className="text-base text-dim tracking-[0.5px] leading-relaxed max-w-lg mb-6">
-          Professional BitLocker recovery on eligible devices, comprehensive computer repair, and guided remote support for clients who cannot travel. <strong className="text-foreground font-normal">No fix, no fee.</strong>
+          ALTCTRL Solutions is bridging the gap between clinical data and actionable insights. We build secure, <strong className="text-foreground font-normal">HIPAA-aligned RAG architectures</strong> for the future of patient triage and clinical decision support.
         </p>
 
-        {/* Urgency box */}
+        {/* Beta box */}
         <div className="border border-primary/40 bg-primary/5 px-5 py-4 mb-8 max-w-lg">
-          <span className="text-primary font-display text-3xl tracking-[2px]">PC LOCKED, BROKEN, OR UNUSABLE?</span>
+          <span className="text-primary font-display text-2xl tracking-[2px]">CLOSED BETA — PRIVATE PREVIEW</span>
           <p className="text-sm text-dim tracking-[0.5px] mt-2 leading-relaxed">
-            Whether you require BitLocker recovery (in-person service on eligible devices), a house visit, or remote assistance for software issues — help is available today. Clear guidance provided at every step.
+            Our clinical triage platform is currently onboarding select independent practices and research partners. Beta access is granted on a rolling basis to qualified design partners.
           </p>
         </div>
 
         <div className="flex gap-4 items-center flex-wrap">
-          <a href="tel:+447000000000" className="font-mono text-[14px] tracking-[3px] text-primary-foreground bg-primary border border-primary px-7 py-4 uppercase hover:bg-transparent hover:text-primary transition-colors">
-            📞 Call Now
+          <a href="#contact" className="font-mono text-[14px] tracking-[3px] text-primary-foreground bg-primary border border-primary px-7 py-4 uppercase hover:bg-transparent hover:text-primary transition-colors">
+            → Request Beta Access
           </a>
-          <a href="sms:+447000000000" className="font-mono text-[14px] tracking-[3px] text-green border border-green px-7 py-4 uppercase hover:bg-green hover:text-background transition-colors">
-            💬 Text Now
+          <a href="#stack" className="font-mono text-[14px] tracking-[3px] text-green border border-green px-7 py-4 uppercase hover:bg-green hover:text-background transition-colors">
+            View Documentation
           </a>
           <a href="#contact" className="font-mono text-[14px] tracking-[3px] text-dim border border-border px-7 py-4 uppercase hover:border-dim hover:text-foreground transition-colors">
-            Request Diagnosis
+            Join Waitlist
           </a>
         </div>
       </div>
 
       {/* Dialog box */}
       <div className="flex-shrink-0 z-[2] animate-fade-up-delay hidden lg:block" style={{ filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.9))" }}>
-        <div className="w-[400px] bg-surface-3 border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111]">
+        <div className="w-[420px] bg-surface-3 border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111]">
           <div className="h-7 flex items-center justify-between px-2 pl-3" style={{ background: "linear-gradient(90deg, #000080 55%, #1084d0 100%)" }}>
-            <span className="text-[13px] text-primary-foreground tracking-[1px]">BitLocker Recovery</span>
+            <span className="text-[13px] text-primary-foreground tracking-[1px]">altctrl-triage // inference.log</span>
             <div className="flex gap-[2px]">
               <div className="w-[17px] h-[15px] bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] text-[10px] text-dim flex items-center justify-center">✕</div>
             </div>
           </div>
-          <div className="p-6 flex gap-4 items-start border-b border-border">
-            <span className="text-4xl flex-shrink-0">🔒</span>
-            <div>
-              <div className="text-sm text-foreground font-bold mb-2 tracking-[0.5px]">BitLocker has locked this device.</div>
-              <div className="text-[14px] text-dim leading-relaxed">
-                <strong className="text-foreground/80 font-normal">ALTCTRL provides BitLocker recovery</strong> on eligible devices via in-person service or drop-off. Contact us to arrange an appointment.
-              </div>
-              <div className="text-xs text-faint mt-3 tracking-[1px]">RECOVERY_MODE — IN-PERSON SERVICE REQUIRED</div>
-            </div>
+          <div className="p-5 font-mono text-[12px] leading-[1.7] border-b border-border">
+            <div className="text-faint">[INFO] vector_store: pgvector (HIPAA-isolated VPC)</div>
+            <div className="text-faint">[INFO] base_model: gemma-2-9b (fine-tuned)</div>
+            <div className="text-faint">[INFO] retrieval: hybrid BM25 + dense (top_k=8)</div>
+            <div className="text-green">[OK]   embeddings: 1.2M clinical notes indexed</div>
+            <div className="text-green">[OK]   compliance: SOC2-ready, audit logs on</div>
+            <div className="text-foreground mt-2">▶ triage --intake "chest pain, 58F, htn..."</div>
+            <div className="text-dim pl-3">→ urgency: <span className="text-primary">HIGH</span></div>
+            <div className="text-dim pl-3">→ recommended_pathway: ED escalation</div>
+            <div className="text-dim pl-3">→ confidence: 0.91 · citations: 6</div>
+            <div className="text-faint mt-3">RUN_MODE — clinician-in-the-loop · not a medical device</div>
           </div>
           <div className="p-3 flex justify-center gap-3">
-            <a href="tel:+447000000000" className="h-7 bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] font-mono text-[13px] text-dim flex items-center justify-center cursor-pointer hover:bg-surface-3 hover:text-foreground px-4" style={{ outline: "1px dashed hsl(var(--text-faint))", outlineOffset: "-4px" }}>
-              Call Now
-            </a>
             <a href="#contact" className="h-7 bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] font-mono text-[13px] text-dim flex items-center justify-center cursor-pointer hover:bg-surface-3 hover:text-foreground px-4" style={{ outline: "1px dashed hsl(var(--text-faint))", outlineOffset: "-4px" }}>
-              Get Help
+              Request Access
+            </a>
+            <a href="#stack" className="h-7 bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] font-mono text-[13px] text-dim flex items-center justify-center cursor-pointer hover:bg-surface-3 hover:text-foreground px-4" style={{ outline: "1px dashed hsl(var(--text-faint))", outlineOffset: "-4px" }}>
+              Architecture
             </a>
           </div>
         </div>

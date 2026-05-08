@@ -9,29 +9,29 @@ const About = () => {
       <div ref={ref} className={isVisible ? "scroll-visible" : "scroll-hidden"}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// about</div>
+            <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// the lab</div>
             <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-8">
-              One person.<br /><span className="text-primary">No nonsense.</span>
+              A focused lab.<br /><span className="text-primary">Not a consultancy.</span>
             </div>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">
-              I'm a solo technician working from home. No shop overheads, no staff markups — just <strong className="text-foreground font-normal">honest repairs at honest prices</strong>. I fix computers because I'm good at it and I care about doing it right.
+              ALTCTRL Solutions is an independent technical lab focused exclusively on <strong className="text-foreground font-normal">clinical AI infrastructure</strong>. We design, deploy, and maintain the systems that allow healthcare teams to use modern language models safely and accountably.
             </p>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">
-              <strong className="text-foreground font-normal">No fix, no fee.</strong> If I can't solve it, you don't pay. If you choose to go ahead with the repair after diagnosis, the diagnosis fee is waived. Simple as that.
+              Our work spans the full stack — from GPU provisioning and model fine-tuning, through retrieval pipelines and evaluation harnesses, up to the clinician-facing interfaces that gate model output behind human review.
             </p>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">
-              Whether I visit your home, or fix it remotely by connecting to your screen — you get the same quality service. I specialise in making technology accessible for <strong className="text-foreground font-normal">everyone</strong>, especially those who find it overwhelming.
+              The lab is led by a <strong className="text-foreground font-normal">Founder &amp; Lead AI Architect</strong> with deep systems engineering roots. Engagements are intentionally limited to preserve technical depth and direct accountability on every deployment.
             </p>
 
             <div className="grid grid-cols-2 gap-px bg-border border border-border mt-10">
               {[
-                { num: "No Fix", label: "No Fee" },
-                { num: "15%", label: "Price Beat" },
-                { num: "Remote", label: "Available" },
-                { num: "100%", label: "Satisfaction" },
+                { num: "HIPAA", label: "Aligned design" },
+                { num: "SOC2", label: "Ready controls" },
+                { num: "Multi", label: "Cloud (GCP·AWS·Azure)" },
+                { num: "IaC", label: "Terraform-managed" },
               ].map((s) => (
                 <div key={s.label} className="bg-surface-2 p-6">
-                  <div className="font-display text-[48px] text-primary tracking-[2px] leading-none">{s.num}</div>
+                  <div className="font-display text-[40px] text-primary tracking-[2px] leading-none">{s.num}</div>
                   <div className="text-xs tracking-[2px] text-dim uppercase mt-2">{s.label}</div>
                 </div>
               ))}
@@ -46,21 +46,21 @@ const About = () => {
                 <div className="w-2.5 h-2.5 rounded-full bg-[#ccaa00]" />
                 <div className="w-2.5 h-2.5 rounded-full bg-green" />
               </div>
-              <span className="text-[13px] text-dim tracking-[1px] ml-2">altctrl — repair/run_</span>
+              <span className="text-[13px] text-dim tracking-[1px] ml-2">altctrl — deploy/triage_</span>
             </div>
             <div className="p-6 text-sm leading-[2]">
-              <div className="flex gap-3 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">scan --device "client-laptop-01"</span></div>
-              <div className="text-dim pl-6">Scanning hardware...</div>
-              <div className="text-dim pl-6">[ CPU: Intel i5-12th Gen — OK ]</div>
-              <div className="text-dim pl-6">[ RAM: 8GB DDR4 — OK ]</div>
-              <div className="text-primary pl-6">[ Storage: SSD — FAILING ]</div>
-              <div className="text-primary pl-6">[ Thermal: CPU 98°C — WARNING ]</div>
-              <div className="flex gap-3 mt-2 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">diagnose --full</span></div>
-              <div className="text-dim pl-6">→ Thermal paste needs replacing.</div>
-              <div className="text-dim pl-6">→ SSD showing bad sectors.</div>
-              <div className="text-dim pl-6">→ Backup recommended before repair.</div>
-              <div className="flex gap-3 mt-2 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">repair --remote --connect</span></div>
-              <div className="text-green pl-6">✓ Remote session started. Fixing now...</div>
+              <div className="flex gap-3 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">terraform apply -target=module.triage</span></div>
+              <div className="text-dim pl-6">Provisioning isolated VPC (us-east1)...</div>
+              <div className="text-dim pl-6">[ Vertex AI endpoint — READY ]</div>
+              <div className="text-dim pl-6">[ pgvector (PHI-tier) — READY ]</div>
+              <div className="text-green pl-6">[ IAM least-privilege — APPLIED ]</div>
+              <div className="text-green pl-6">[ Audit logs → Cloud Logging — ON ]</div>
+              <div className="flex gap-3 mt-2 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">eval --suite clinical-qa --model gemma-ft</span></div>
+              <div className="text-dim pl-6">→ accuracy: 0.87 · faithfulness: 0.93</div>
+              <div className="text-dim pl-6">→ hallucination_rate: 0.04</div>
+              <div className="text-dim pl-6">→ citation_coverage: 0.96</div>
+              <div className="flex gap-3 mt-2 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">deploy --canary 10%</span></div>
+              <div className="text-green pl-6">✓ Canary live. Awaiting clinician review.</div>
               <div className="flex gap-3 mt-2"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground"><span className="inline-block w-2 h-3.5 bg-green animate-blink align-middle ml-0.5" /></span></div>
             </div>
           </div>
