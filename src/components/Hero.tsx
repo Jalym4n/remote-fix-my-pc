@@ -41,34 +41,53 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Dialog box */}
-      <div className="flex-shrink-0 z-[2] animate-fade-up-delay hidden lg:block" style={{ filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.9))" }}>
-        <div className="w-[420px] bg-surface-3 border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111]">
-          <div className="h-7 flex items-center justify-between px-2 pl-3" style={{ background: "linear-gradient(90deg, #000080 55%, #1084d0 100%)" }}>
-            <span className="text-[13px] text-primary-foreground tracking-[1px]">altctrl-triage // inference.log</span>
-            <div className="flex gap-[2px]">
-              <div className="w-[17px] h-[15px] bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] text-[10px] text-dim flex items-center justify-center">✕</div>
+      {/* Dashboard card */}
+      <div className="flex-shrink-0 z-[2] animate-fade-up-delay hidden lg:block w-[440px]" style={{ filter: "drop-shadow(0 24px 60px rgba(0,0,0,0.5))" }}>
+        <div className="bg-surface border border-border rounded-xl overflow-hidden">
+          <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <div className="w-2 h-2 rounded-full bg-green animate-pulse-dot" />
+              <span className="text-[13px] text-foreground font-medium tracking-tight">Triage Inference</span>
             </div>
+            <span className="text-[11px] text-faint font-mono uppercase tracking-wider">live</span>
           </div>
-          <div className="p-5 font-mono text-[12px] leading-[1.7] border-b border-border">
-            <div className="text-faint">[INFO] vector_store: pgvector (HIPAA-isolated VPC)</div>
-            <div className="text-faint">[INFO] base_model: gemma-2-9b (fine-tuned)</div>
-            <div className="text-faint">[INFO] retrieval: hybrid BM25 + dense (top_k=8)</div>
-            <div className="text-green">[OK]   embeddings: 1.2M clinical notes indexed</div>
-            <div className="text-green">[OK]   compliance: SOC2-ready, audit logs on</div>
-            <div className="text-foreground mt-2">▶ triage --intake "chest pain, 58F, htn..."</div>
-            <div className="text-dim pl-3">→ urgency: <span className="text-primary">HIGH</span></div>
-            <div className="text-dim pl-3">→ recommended_pathway: ED escalation</div>
-            <div className="text-dim pl-3">→ confidence: 0.91 · citations: 6</div>
-            <div className="text-faint mt-3">RUN_MODE — clinician-in-the-loop · not a medical device</div>
-          </div>
-          <div className="p-3 flex justify-center gap-3">
-            <a href="#contact" className="h-7 bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] font-mono text-[13px] text-dim flex items-center justify-center cursor-pointer hover:bg-surface-3 hover:text-foreground px-4" style={{ outline: "1px dashed hsl(var(--text-faint))", outlineOffset: "-4px" }}>
-              Request Access
-            </a>
-            <a href="#stack" className="h-7 bg-muted border-t border-l border-border-light border-r border-b border-r-[#111] border-b-[#111] font-mono text-[13px] text-dim flex items-center justify-center cursor-pointer hover:bg-surface-3 hover:text-foreground px-4" style={{ outline: "1px dashed hsl(var(--text-faint))", outlineOffset: "-4px" }}>
-              Architecture
-            </a>
+
+          <div className="p-5 space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-surface2 rounded-lg p-3 border border-border/60">
+                <div className="text-[10px] text-faint uppercase tracking-wider mb-1">Model</div>
+                <div className="text-sm text-foreground font-medium">Gemma-2 · FT</div>
+              </div>
+              <div className="bg-surface2 rounded-lg p-3 border border-border/60">
+                <div className="text-[10px] text-faint uppercase tracking-wider mb-1">Retrieval</div>
+                <div className="text-sm text-foreground font-medium">Hybrid · k=8</div>
+              </div>
+            </div>
+
+            <div className="bg-surface2 rounded-lg p-4 border border-border/60">
+              <div className="text-[11px] text-faint uppercase tracking-wider mb-2">Intake</div>
+              <p className="text-sm text-dim leading-relaxed">"58F, chest pain on exertion, hx hypertension..."</p>
+            </div>
+
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-dim">Urgency</span>
+                <span className="text-primary font-semibold">High</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-dim">Pathway</span>
+                <span className="text-foreground">ED escalation</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-dim">Confidence</span>
+                <span className="text-foreground">0.91 · 6 citations</span>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-border/60 flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-green" />
+              <span className="text-[11px] text-faint">Clinician-in-the-loop · decision support only</span>
+            </div>
           </div>
         </div>
       </div>

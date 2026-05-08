@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['VT323', 'monospace'],
-        mono: ['Share Tech Mono', 'monospace'],
+        display: ['Space Grotesk', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'SF Mono', 'Menlo', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

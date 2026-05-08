@@ -38,30 +38,34 @@ const About = () => {
             </div>
           </div>
 
-          {/* Terminal */}
-          <div className="bg-[#0a0a0a] border border-border-light font-mono">
-            <div className="bg-muted border-b border-border px-3.5 py-2 flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-primary" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ccaa00]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green" />
-              </div>
-              <span className="text-[13px] text-dim tracking-[1px] ml-2">altctrl — deploy/triage_</span>
+          {/* Architecture diagram card */}
+          <div className="bg-surface border border-border rounded-xl overflow-hidden">
+            <div className="px-5 py-4 border-b border-border flex items-center justify-between">
+              <span className="text-sm text-foreground font-medium">Reference Architecture</span>
+              <span className="text-[11px] text-faint font-mono uppercase tracking-wider">v1.4</span>
             </div>
-            <div className="p-6 text-sm leading-[2]">
-              <div className="flex gap-3 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">terraform apply -target=module.triage</span></div>
-              <div className="text-dim pl-6">Provisioning isolated VPC (us-east1)...</div>
-              <div className="text-dim pl-6">[ Vertex AI endpoint — READY ]</div>
-              <div className="text-dim pl-6">[ pgvector (PHI-tier) — READY ]</div>
-              <div className="text-green pl-6">[ IAM least-privilege — APPLIED ]</div>
-              <div className="text-green pl-6">[ Audit logs → Cloud Logging — ON ]</div>
-              <div className="flex gap-3 mt-2 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">eval --suite clinical-qa --model gemma-ft</span></div>
-              <div className="text-dim pl-6">→ accuracy: 0.87 · faithfulness: 0.93</div>
-              <div className="text-dim pl-6">→ hallucination_rate: 0.04</div>
-              <div className="text-dim pl-6">→ citation_coverage: 0.96</div>
-              <div className="flex gap-3 mt-2 mb-0.5"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground">deploy --canary 10%</span></div>
-              <div className="text-green pl-6">✓ Canary live. Awaiting clinician review.</div>
-              <div className="flex gap-3 mt-2"><span className="text-green flex-shrink-0">▶</span><span className="text-foreground"><span className="inline-block w-2 h-3.5 bg-green animate-blink align-middle ml-0.5" /></span></div>
+            <div className="p-6 space-y-4">
+              {[
+                { label: "Ingest", desc: "De-identification · chunking · embeddings", tone: "primary" },
+                { label: "Retrieve", desc: "pgvector · hybrid BM25 + dense", tone: "primary" },
+                { label: "Reason", desc: "Fine-tuned LLM · guardrails · citations", tone: "green" },
+                { label: "Review", desc: "Clinician-in-the-loop · audit log", tone: "green" },
+              ].map((step, i) => (
+                <div key={step.label} className="flex items-start gap-4">
+                  <div className={`flex-shrink-0 w-9 h-9 rounded-lg border flex items-center justify-center text-sm font-semibold ${step.tone === "primary" ? "border-primary/40 text-primary bg-primary/5" : "border-green/40 text-green bg-green/5"}`}>
+                    {i + 1}
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <div className="text-sm text-foreground font-medium">{step.label}</div>
+                    <div className="text-xs text-dim mt-0.5">{step.desc}</div>
+                  </div>
+                </div>
+              ))}
+              <div className="pt-3 mt-2 border-t border-border/60 grid grid-cols-3 gap-3">
+                {["GCP", "AWS", "Azure"].map((c) => (
+                  <div key={c} className="text-center bg-surface2 border border-border/60 rounded-md py-2 text-xs text-dim font-medium">{c}</div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
