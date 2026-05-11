@@ -1,7 +1,8 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Link } from "react-router-dom";
 
 const services = [
-  { icon: "🔐", title: "BitLocker Recovery", desc: "Locked out of your own machine? Recovery key lost? In-person and drop-off recovery on eligible devices — our flagship service.", price: "→ In-person only", flagship: true, note: "Not available remotely — physical access required." },
+  { icon: "🔐", title: "BitLocker Recovery", desc: "Locked out of your own machine? Recovery key lost? In-person and drop-off recovery on eligible devices — our flagship service.", price: "→ In-person only", flagship: true, note: "Not available remotely — physical access required.", href: "/bitlocker-recovery" },
   { icon: "🛟", title: "Remote Rescue", desc: "Global remote support for software issues — virus removal, slow PC, setup, configuration. Guided FaceTime / WhatsApp onboarding for non-technical users.", price: "→ From £30", flagship: true },
   { icon: "💻", title: "Laptop & Desktop Repair", desc: "Cracked screens, dead batteries, won't boot, overheating, OS reinstalls and component upgrades.", price: "→ From £30" },
   { icon: "💾", title: "Data Recovery", desc: "Accidentally deleted files, corrupted drives, failed SSDs. Assessment first — quote on findings.", price: "→ Quote on assessment" },
