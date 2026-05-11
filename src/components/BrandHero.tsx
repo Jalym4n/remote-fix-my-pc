@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+const BrandHero = () => {
   return (
     <section className="w-full bg-surface bg-noise relative overflow-hidden px-6 md:px-20 pt-28 pb-20 lg:pt-36 lg:pb-28">
       <div className="absolute inset-0 z-0 bg-circuit opacity-60" />
