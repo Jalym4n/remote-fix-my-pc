@@ -1,10 +1,13 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const faqs = [
+type Faq = { q: string; a: string; link?: { label: string; to: string } };
+
+const faqs: Faq[] = [
   { q: "How does the no-fix-no-fee guarantee work?", a: "If we cannot resolve the reported fault, you pay nothing. The diagnosis is performed at no obligation, and the diagnosis fee is waived if you proceed with the repair." },
   { q: "What is the 15% price-beat guarantee?", a: "Provide a written quote from a comparable local engineer for the same scope of work and we will beat it by 15%. Subject to review of the quote." },
-  { q: "Do you offer BitLocker recovery remotely?", a: "No. BitLocker recovery requires physical access to the device and is offered in-person or via secure drop-off only. This is a technical constraint of the encryption scheme, not a policy choice. Visit our dedicated BitLocker recovery page → /bitlocker-recovery", link: { label: "Get help now →", to: "/bitlocker-recovery" } },
+  { q: "Do you offer BitLocker recovery remotely?", a: "No. BitLocker recovery requires physical access to the device and is offered in-person or via secure drop-off only. This is a technical constraint of the encryption scheme, not a policy choice.", link: { label: "Get help now →", to: "/bitlocker-recovery" } },
   { q: "What areas do you cover for on-site work?", a: "On-site visits are available within a reasonable travel radius. Remote support — where the issue allows — is available globally over secure remote-desktop tooling." },
   { q: "Do you work with businesses on retainer?", a: "Yes. Managed IT engagements are scoped per environment with defined SLAs, documented systems, and monthly reporting. Contact us for a discovery call." },
   { q: "Are you insured?", a: "Yes — we carry professional indemnity and public liability cover. Documentation is available on request for enterprise procurement." },
