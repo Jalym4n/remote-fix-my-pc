@@ -14,7 +14,7 @@ const BrandHero = () => {
           Engineering trust into <span className="text-primary">every system we touch.</span>
         </h1>
         <p className="text-base md:text-lg text-dim leading-relaxed max-w-2xl mx-auto text-center mb-12">
-          ALTCTRL operates two specialised divisions: a working <strong className="text-foreground font-medium">IT Services</strong> practice serving households and enterprise clients today, and an emerging <strong className="text-foreground font-medium">AI Labs</strong> developing next-generation clinical infrastructure.
+          ALTCTRL operates two specialised divisions: a live <strong className="text-foreground font-medium">IT Solutions venture</strong> serving household and enterprise clients today, and an emerging <strong className="text-foreground font-medium">AI startup</strong> developing next-generation clinical infrastructure.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
