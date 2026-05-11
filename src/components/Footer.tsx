@@ -18,11 +18,12 @@ const Footer = () => {
             <span className="text-[9px] tracking-[2px] uppercase text-primary">● Live</span>
           </div>
           <ul className="flex flex-col gap-2.5">
-            <li><a href="#services" className="text-xs text-dim hover:text-primary transition-colors">Services</a></li>
-            <li><a href="#enterprise" className="text-xs text-dim hover:text-primary transition-colors">For business</a></li>
-            <li><a href="#process" className="text-xs text-dim hover:text-primary transition-colors">Process</a></li>
-            <li><a href="#it-faq" className="text-xs text-dim hover:text-primary transition-colors">FAQ</a></li>
-            <li><a href="#it-contact" className="text-xs text-dim hover:text-primary transition-colors">Get help</a></li>
+            <li><a href="/#services" className="text-xs text-dim hover:text-primary transition-colors">Services</a></li>
+            <li><a href="/bitlocker-recovery" className="text-xs text-primary hover:text-primary/80 transition-colors">BitLocker Recovery →</a></li>
+            <li><a href="/#enterprise" className="text-xs text-dim hover:text-primary transition-colors">For business</a></li>
+            <li><a href="/#process" className="text-xs text-dim hover:text-primary transition-colors">Process</a></li>
+            <li><a href="/#it-faq" className="text-xs text-dim hover:text-primary transition-colors">FAQ</a></li>
+            <li><a href="/#it-contact" className="text-xs text-dim hover:text-primary transition-colors">Get help</a></li>
           </ul>
         </div>
 
