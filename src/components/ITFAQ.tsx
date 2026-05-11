@@ -37,7 +37,12 @@ const ITFAQ = () => {
                 <span className="font-display text-2xl text-primary flex-shrink-0 transition-transform duration-200" style={{ transform: open === i ? "rotate(45deg)" : "rotate(0deg)" }}>+</span>
               </button>
               <div className="overflow-hidden transition-all duration-300" style={{ maxHeight: open === i ? "400px" : "0px", opacity: open === i ? 1 : 0 }}>
-                <p className="text-sm text-dim leading-relaxed pb-6 pr-8">{faq.a}</p>
+                <p className="text-sm text-dim leading-relaxed pb-3 pr-8">{faq.a}</p>
+                {faq.link && (
+                  <Link to={faq.link.to} className="inline-block text-[12px] tracking-[3px] uppercase text-primary hover:text-primary/80 transition-colors pb-6">
+                    {faq.link.label}
+                  </Link>
+                )}
               </div>
             </div>
           ))}
