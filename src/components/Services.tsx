@@ -28,20 +28,30 @@ const Services = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-md overflow-hidden">
-          {services.map((s) => (
-            <div key={s.title} className={`bg-surface p-7 relative overflow-hidden group transition-colors hover:bg-surface2 ${s.flagship ? "border-l-2 border-l-primary" : ""}`}>
-              {s.flagship && (
-                <div className="absolute top-3 right-3 bg-primary/10 border border-primary/30 px-2.5 py-0.5 rounded">
-                  <span className="text-[10px] tracking-[2px] text-primary uppercase font-medium">★ Flagship</span>
+          {services.map((s) => {
+            const inner = (
+              <>
+                {s.flagship && (
+                  <div className="absolute top-3 right-3 bg-primary/10 border border-primary/30 px-2.5 py-0.5 rounded">
+                    <span className="text-[10px] tracking-[2px] text-primary uppercase font-medium">★ Flagship</span>
+                  </div>
+                )}
+                <span className="text-3xl mb-4 block">{s.icon}</span>
+                <div className="font-display text-[20px] tracking-[-0.01em] text-foreground mb-2">{s.title}</div>
+                <p className="text-sm text-dim leading-relaxed mb-3">{s.desc}</p>
+                {s.note && <p className="text-[11px] text-faint italic mb-2">{s.note}</p>}
+                <div className="text-[12px] tracking-[2px] text-primary mt-3 uppercase">
+                  {s.href ? "→ Get help now" : s.price}
                 </div>
-              )}
-              <span className="text-3xl mb-4 block">{s.icon}</span>
-              <div className="font-display text-[20px] tracking-[-0.01em] text-foreground mb-2">{s.title}</div>
-              <p className="text-sm text-dim leading-relaxed mb-3">{s.desc}</p>
-              {s.note && <p className="text-[11px] text-faint italic mb-2">{s.note}</p>}
-              <div className="text-[12px] tracking-[2px] text-primary mt-3 uppercase">{s.price}</div>
-            </div>
-          ))}
+              </>
+            );
+            const className = `bg-surface p-7 relative overflow-hidden group transition-colors hover:bg-surface2 ${s.flagship ? "border-l-2 border-l-primary" : ""} ${s.href ? "cursor-pointer block" : ""}`;
+            return s.href ? (
+              <Link key={s.title} to={s.href} className={className}>{inner}</Link>
+            ) : (
+              <div key={s.title} className={className}>{inner}</div>
+            );
+          })}
         </div>
       </div>
     </section>
