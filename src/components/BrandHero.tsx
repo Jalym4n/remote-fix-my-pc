@@ -21,7 +21,7 @@ const BrandHero = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           {/* IT Services — Operational */}
-          <a href="#it-services" className="group bg-surface2 border border-border hover:border-primary/60 rounded-xl p-7 transition-all">
+          <div className="group bg-surface2 border border-border hover:border-primary/60 rounded-xl p-7 transition-all">
             <div className="flex items-center justify-between mb-5">
               <span className="text-[11px] tracking-[3px] text-faint uppercase">Division 01</span>
               <span className="inline-flex items-center gap-2 text-[11px] tracking-[2px] text-primary uppercase">
@@ -38,7 +38,6 @@ const BrandHero = () => {
             <div className="flex flex-wrap gap-2 mb-6">
               <Link
                 to="/bitlocker-recovery"
-                onClick={(e) => e.stopPropagation()}
                 className="text-[11px] tracking-[1px] text-primary bg-primary/10 border border-primary/40 px-2.5 py-1 rounded hover:bg-primary/20 transition-colors"
               >
                 BitLocker Recovery →
@@ -47,10 +46,15 @@ const BrandHero = () => {
                 <span key={t} className="text-[11px] tracking-[1px] text-foreground bg-surface3 border border-border px-2.5 py-1 rounded">{t}</span>
               ))}
             </div>
-            <div className="text-[12px] tracking-[3px] text-primary uppercase group-hover:translate-x-1 transition-transform">
-              → Explore IT Services
+            <div className="flex flex-wrap gap-3">
+              <a href="#it-services" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 transition-transform">
+                → Explore IT Services
+              </a>
+              <Link to="/bitlocker-recovery" className="text-[12px] tracking-[3px] text-foreground uppercase border-l border-border pl-3 hover:text-primary transition-colors">
+                → BitLocker landing page
+              </Link>
             </div>
-          </a>
+          </div>
 
           {/* AI Labs — In Development */}
           <a href="#ai-labs" className="group bg-surface2 border border-border hover:border-accent/60 rounded-xl p-7 transition-all">
