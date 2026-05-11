@@ -36,7 +36,14 @@ const BrandHero = () => {
               Computer repair, BitLocker recovery, remote rescue and managed IT for individuals, professional practices and small enterprises. Insured, no-fix-no-fee, same-day capacity.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
-              {["BitLocker Recovery", "Remote Rescue", "Managed IT", "Data Recovery"].map((t) => (
+              <Link
+                to="/bitlocker-recovery"
+                onClick={(e) => e.stopPropagation()}
+                className="text-[11px] tracking-[1px] text-primary bg-primary/10 border border-primary/40 px-2.5 py-1 rounded hover:bg-primary/20 transition-colors"
+              >
+                BitLocker Recovery →
+              </Link>
+              {["Remote Rescue", "Managed IT", "Data Recovery"].map((t) => (
                 <span key={t} className="text-[11px] tracking-[1px] text-foreground bg-surface3 border border-border px-2.5 py-1 rounded">{t}</span>
               ))}
             </div>
