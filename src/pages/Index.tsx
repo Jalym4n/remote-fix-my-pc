@@ -1,44 +1,69 @@
 import Navbar from "@/components/Navbar";
+import BrandHero from "@/components/BrandHero";
+import DivisionHeader from "@/components/DivisionHeader";
+
+import ITTrustBar from "@/components/ITTrustBar";
+import Services from "@/components/Services";
+import EnterpriseBand from "@/components/EnterpriseBand";
+import RemoteSection from "@/components/RemoteSection";
+import Process from "@/components/Process";
+import ITFAQ from "@/components/ITFAQ";
+import ITContact from "@/components/ITContact";
+
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
-import CTABand from "@/components/CTABand";
 import ServiceOptions from "@/components/ServiceOptions";
 import TechStack from "@/components/TechStack";
-import TopProblems from "@/components/TopProblems";
-import WhoItsFor from "@/components/WhoItsFor";
-import FAQ from "@/components/FAQ";
 import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import CTABand from "@/components/CTABand";
 
-const Divider = () => (
-  <div className="h-px mx-6 md:mx-20" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--border)), transparent)" }} />
-);
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <BrandHero />
+
+      {/* ──────────── Division 01 — IT Services ──────────── */}
+      <DivisionHeader
+        id="it-services"
+        number="01"
+        name="IT Services"
+        status="operational"
+        tagline="A working IT practice serving households, professional offices and enterprise clients today. Repair, BitLocker recovery, remote rescue, and ongoing managed IT."
+      />
+      <ITTrustBar />
+      <Services />
+      <div id="enterprise"><EnterpriseBand /></div>
+      <RemoteSection />
+      <Process />
+      <ITFAQ />
+      <ITContact />
+
+      {/* ──────────── Division 02 — AI Labs ──────────── */}
+      <DivisionHeader
+        id="ai-labs"
+        number="02"
+        name="AI Labs"
+        status="in-development"
+        tagline="An R&D division building HIPAA-aligned clinical AI infrastructure. Currently in private beta with a small number of design partners — not yet a live commercial product."
+      />
       <Hero />
       <TrustBar />
-      <Divider />
       <ServiceOptions />
-      <CTABand headline="Clinical *LLM fine-tuning* on your infrastructure" subtext="Open-weight models, parameter-efficient training, deployed inside your cloud tenancy." variant="primary" />
       <TechStack />
-      <Divider />
-      <TopProblems />
-      <Divider />
-      <WhoItsFor />
-      <CTABand headline="A *small lab.* Selective engagements." subtext="Beta access is granted on a rolling basis to qualified design partners." variant="green" />
-      <Testimonials />
-      <Divider />
       <About />
-      <Divider />
       <FAQ />
-      <Divider />
       <Contact />
-      <CTABand headline="Build with *ALTCTRL Solutions.*" subtext="Request Beta access or contact the lab directly at jaleed01@altctrl.run." variant="primary" />
+      <CTABand
+        headline="Building the *next layer* of clinical AI."
+        subtext="Join the AI Labs waitlist or contact the lab directly at jaleed01@altctrl.run."
+        variant="green"
+      />
+
       <Footer />
     </div>
   );
