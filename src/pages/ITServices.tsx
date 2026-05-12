@@ -8,7 +8,7 @@ const trustItems = [
   { k: "No Fix — No Fee", v: "Fixed within 1 week or we don't charge." },
   { k: "Free Diagnosis", v: "Waived on Repair" },
   { k: "Price-Beat Guarantee", v: "15% under written quotes" },
-  { k: "Same-day", v: "rush capacity available" },
+  { k: "Same-day", v: "Waived on Repair" },
 ];
 
 const services = [
