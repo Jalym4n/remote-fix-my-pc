@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "How much does it cost?",
-    a: "Diagnosis is free and is waived entirely if the recovery proceeds. Recovery itself starts from £80 depending on device, time required, and any data-recovery work needed. You receive a fixed quote before any work begins.",
+    a: "Diagnosis is free and is waived entirely if the recovery proceeds. Recovery itself starts from CA$80 depending on device, time required, and any data-recovery work needed. You receive a fixed quote before any work begins.",
   },
   {
     q: "How long does it take?",

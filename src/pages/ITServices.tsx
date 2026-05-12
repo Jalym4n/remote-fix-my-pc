@@ -12,14 +12,14 @@ const trustItems = [
 ];
 
 const services = [
-  { t: "Laptop & desktop repair", d: "Cracked screens, dead batteries, won't boot, overheating, OS reinstalls, component upgrades.", p: "From £30" },
-  { t: "Remote rescue", d: "Global remote support for software issues — virus removal, slow PC, setup, configuration. Guided onboarding for non-technical users.", p: "From £30" },
+  { t: "Laptop & desktop repair", d: "Cracked screens, dead batteries, won't boot, overheating, OS reinstalls, component upgrades.", p: "From CA$30" },
+  { t: "Remote rescue", d: "Global remote support for software issues — virus removal, slow PC, setup, configuration. Guided onboarding for non-technical users.", p: "From CA$30" },
   { t: "BitLocker recovery", d: "In-person recovery for eligible Windows devices. Our flagship service — handled with verified ownership.", p: "In-person only", href: "/bitlocker-recovery" },
   { t: "Data recovery", d: "Accidentally deleted files, corrupted drives, failed SSDs. Assessment first — quote on findings.", p: "Quote on assessment" },
-  { t: "Virus & malware removal", d: "Ransomware, adware, spyware. Full clean-up plus hardening to prevent re-infection.", p: "From £25" },
-  { t: "Speed & tune-up", d: "Slow boot, lag, storage pressure. Deep clean, optimisation, bloatware removal.", p: "From £25" },
-  { t: "Network & Wi-Fi", d: "Dead zones, slow speeds, router and printer configuration. Home and small-business networks.", p: "From £30" },
-  { t: "Setup & onboarding", d: "New device setup, data migration, account configuration, peripheral installation.", p: "From £25" },
+  { t: "Virus & malware removal", d: "Ransomware, adware, spyware. Full clean-up plus hardening to prevent re-infection.", p: "From CA$25" },
+  { t: "Speed & tune-up", d: "Slow boot, lag, storage pressure. Deep clean, optimisation, bloatware removal.", p: "From CA$25" },
+  { t: "Network & Wi-Fi", d: "Dead zones, slow speeds, router and printer configuration. Home and small-business networks.", p: "From CA$30" },
+  { t: "Setup & onboarding", d: "New device setup, data migration, account configuration, peripheral installation.", p: "From CA$25" },
 ];
 
 const steps = [
