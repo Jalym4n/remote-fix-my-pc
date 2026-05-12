@@ -7,7 +7,7 @@ const trustItems = [
   { k: "No fix", v: "no fee" },
   { k: "Diagnosis", v: "waived on repair" },
   { k: "Price-beat", v: "15% under written quotes" },
-  { k: "Same-day", v: "rush capacity available" },
+  { k: "Same-day", v: "Waived on Repair" },
 ];
 
 const steps = [
