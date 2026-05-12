@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const links = [
-    { label: "IT Services", href: "/#it-services" },
+    { label: "IT Services", to: "/it-services" },
     { label: "BitLocker", to: "/bitlocker-recovery", flag: "Sitelink" },
     { label: "AI Labs", href: "/#ai-labs", soon: true },
     { label: "Contact", href: "/#it-contact" },
