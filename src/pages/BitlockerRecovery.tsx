@@ -5,7 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const trustItems = [
   { k: "No fix", v: "no fee" },
-  { k: "Diagnosis", v: "waived on repair" },
+  { k: "Diagnosis", v: "Waived on Repair" },
   { k: "Price-beat", v: "15% under written quotes" },
   { k: "Same-day", v: "Waived on Repair" },
 ];
