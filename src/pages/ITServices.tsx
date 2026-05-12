@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const trustItems = [
-  { k: "No fix", v: "no fee" },
-  { k: "Diagnosis", v: "waived on repair" },
-  { k: "Price-beat", v: "15% under written quotes" },
+  { k: "No Fix — No Fee", v: "Fixed within 1 week or we don't charge." },
+  { k: "Free Diagnosis", v: "Waived on Repair" },
+  { k: "Price-Beat Guarantee", v: "15% under written quotes" },
   { k: "Same-day", v: "rush capacity available" },
 ];
 
