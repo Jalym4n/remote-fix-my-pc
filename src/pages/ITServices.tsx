@@ -8,7 +8,7 @@ const trustItems = [
   { k: "No Fix — No Fee", v: "Fixed within 1 week or we don't charge." },
   { k: "Free Diagnosis", v: "Waived on Repair" },
   { k: "Price-Beat Guarantee", v: "15% under written quotes" },
-  { k: "Same-day", v: "rush capacity available" },
+  { k: "Same-day", v: "Waived on Repair" },
 ];
 
 const services = [
@@ -123,7 +123,7 @@ const ITServices = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl">
             {trustItems.map((t) => (
               <div key={t.k} className="bg-surface2 border border-border rounded-md p-4">
-                <div className="text-[10px] tracking-[3px] text-faint uppercase mb-1">{t.k}</div>
+                <div className="tracking-[3px] text-faint uppercase mb-1 text-xs font-thin">{t.k}</div>
                 <div className="font-display text-base text-foreground">{t.v}</div>
               </div>
             ))}

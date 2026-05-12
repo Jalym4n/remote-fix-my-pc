@@ -5,9 +5,9 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const trustItems = [
   { k: "No fix", v: "no fee" },
-  { k: "Diagnosis", v: "waived on repair" },
+  { k: "Diagnosis", v: "Waived on Repair" },
   { k: "Price-beat", v: "15% under written quotes" },
-  { k: "Same-day", v: "rush capacity available" },
+  { k: "Same-day", v: "Waived on Repair" },
 ];
 
 const steps = [
@@ -139,8 +139,8 @@ const BitlockerRecovery = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl">
             {trustItems.map((t) => (
               <div key={t.k} className="bg-surface2 border border-border rounded-md p-4">
-                <div className="text-[10px] tracking-[3px] text-faint uppercase mb-1">{t.k}</div>
-                <div className="text-sm text-foreground">{t.v}</div>
+                <div className="tracking-[3px] text-faint uppercase mb-1 text-xs font-thin">{t.k}</div>
+                <div className="font-display text-base text-foreground">{t.v}</div>
               </div>
             ))}
           </div>
