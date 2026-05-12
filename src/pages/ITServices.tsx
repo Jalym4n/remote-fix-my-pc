@@ -124,7 +124,7 @@ const ITServices = () => {
             {trustItems.map((t) => (
               <div key={t.k} className="bg-surface2 border border-border rounded-md p-4">
                 <div className="text-[10px] tracking-[3px] text-faint uppercase mb-1">{t.k}</div>
-                <div className="text-sm text-foreground">{t.v}</div>
+                <div className="font-display text-base text-foreground">{t.v}</div>
               </div>
             ))}
           </div>
