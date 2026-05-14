@@ -1,4 +1,4 @@
-import logoMark from "@/assets/logo-neural.png";
+
 
 const Footer = () => {
   return (
@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2.5 mb-4">
-            <img src={logoMark} alt="ALTCTRL" className="h-8 w-8 object-contain opacity-80" />
+            
             <span className="font-display text-2xl tracking-[2px] text-foreground">
               ALT<span className="text-primary">CTRL</span>
             </span>
