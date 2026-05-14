@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoBracket from "@/assets/logo-bracket.png";
 
 const BrandHero = () => {
   return (

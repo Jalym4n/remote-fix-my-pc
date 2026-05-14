@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import logoShield from "@/assets/logo-shield.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";

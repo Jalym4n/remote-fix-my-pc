@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import logoKey from "@/assets/logo-key.png";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

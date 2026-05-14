@@ -1,3 +1,5 @@
+import logoAtomic from "@/assets/logo-atomic.png";
+
 const Hero = () => {
   return (
     <section className="w-full bg-background relative overflow-hidden px-6 md:px-20 py-16 md:py-20">
