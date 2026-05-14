@@ -79,7 +79,7 @@ const BrandHero = () => {
             <div className="text-[12px] tracking-[3px] text-accent uppercase group-hover:translate-x-1 transition-transform">
               → Follow the lab
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
