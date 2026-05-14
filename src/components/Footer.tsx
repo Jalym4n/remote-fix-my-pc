@@ -1,4 +1,4 @@
-import logoMark from "@/assets/logo-neural.png";
+
 
 const Footer = () => {
   return (

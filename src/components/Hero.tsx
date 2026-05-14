@@ -1,4 +1,4 @@
-import logoAtomic from "@/assets/logo-atomic.png";
+
 
 const Hero = () => {
   return (
