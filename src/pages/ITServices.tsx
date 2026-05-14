@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import logoKey from "@/assets/logo-key.png";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -93,6 +94,7 @@ const ITServices = () => {
         />
 
         <div ref={hero.ref} className={`relative z-[2] max-w-5xl mx-auto ${hero.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
+          <img src={logoKey} alt="" aria-hidden="true" className="h-14 w-14 object-contain opacity-70 mb-5" />
           <div className="inline-flex items-center gap-2 text-[11px] tracking-[3px] text-primary uppercase mb-6 border border-primary/40 bg-primary/5 px-3 py-1.5 rounded">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-dot" />
             IT Solutions · Live division

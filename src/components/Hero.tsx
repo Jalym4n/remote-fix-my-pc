@@ -1,3 +1,5 @@
+import logoAtomic from "@/assets/logo-atomic.png";
+
 const Hero = () => {
   return (
     <section className="w-full bg-background relative overflow-hidden px-6 md:px-20 py-16 md:py-20">
@@ -6,6 +8,7 @@ const Hero = () => {
 
       <div className="relative z-[2] grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
         <div>
+          <img src={logoAtomic} alt="" aria-hidden="true" className="h-14 w-14 object-contain opacity-70 mb-5" />
           <div className="inline-flex items-center gap-2 text-[11px] tracking-[3px] uppercase border px-3 py-1 rounded-full mb-5" style={{ color: "hsl(40 90% 60%)", borderColor: "hsla(40,90%,60%,0.4)" }}>
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: "hsl(40 90% 60%)" }} />
             Private Beta · In Development

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoBracket from "@/assets/logo-bracket.png";
 
 const BrandHero = () => {
   return (
@@ -9,6 +10,7 @@ const BrandHero = () => {
       <div className="absolute inset-0 z-[1] pointer-events-none" style={{ background: "radial-gradient(ellipse at center, transparent 30%, hsl(220 22% 7%) 100%)" }} />
 
       <div className="relative z-[2] max-w-6xl mx-auto">
+        <img src={logoBracket} alt="" aria-hidden="true" className="h-16 w-auto object-contain opacity-75 mx-auto mb-6" />
         <div className="text-[13px] tracking-[4px] text-faint uppercase mb-5 text-center">
           // ALTCTRL — Two divisions, one operator
         </div>
