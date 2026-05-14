@@ -20,10 +20,8 @@ const Navbar = () => {
       </>
     );
     const cls = "text-[12px] tracking-[2px] text-dim uppercase hover:text-foreground transition-colors flex items-center gap-2";
-    return "to" in item ? (
+    return (
       <Link key={item.label} to={item.to} className={cls} onClick={onClick}>{inner}</Link>
-    ) : (
-      <a key={item.label} href={item.href} className={cls} onClick={onClick}>{inner}</a>
     );
   };
 
