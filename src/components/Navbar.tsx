@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logoMark from "@/assets/logo-neural.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,8 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] h-14 bg-background/95 border-b border-border flex items-center justify-between px-6 md:px-12 backdrop-blur-md">
-      <Link to="/" className="flex items-center gap-3">
+      <Link to="/" className="flex items-center gap-2.5">
+        <img src={logoMark} alt="ALTCTRL" className="h-7 w-7 object-contain opacity-90" />
         <span className="font-display text-2xl tracking-[2px] text-foreground">
           ALT<span className="text-primary">CTRL</span>
         </span>
