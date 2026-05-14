@@ -21,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/bitlocker-recovery" element={<BitlockerRecovery />} />
           <Route path="/it-services" element={<ITServices />} />
+          <Route path="/ai-labs" element={<AILabs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
