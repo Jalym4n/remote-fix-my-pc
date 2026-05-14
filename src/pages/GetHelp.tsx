@@ -1,10 +1,45 @@
-import { useEffect } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const GetHelpPage = () => {
   const top = useScrollReveal();
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (submitting) return;
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: String(fd.get("name") || "").trim(),
+      contact: String(fd.get("contact") || "").trim(),
+      clientType: String(fd.get("clientType") || ""),
+      urgency: String(fd.get("urgency") || "Standard"),
+      message: String(fd.get("message") || "").trim(),
+      source: "get-help",
+    };
+    if (!payload.name || !payload.contact || !payload.message) {
+      toast.error("Please fill in name, contact, and message.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-request", { body: payload });
+      if (error) throw error;
+      setSent(true);
+      toast.success("Request sent. We'll be in touch within one business day.");
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("Couldn't send your request. Please call +1-647-643-7979.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     document.title = "Get Help — ALTCTRL Solutions";
