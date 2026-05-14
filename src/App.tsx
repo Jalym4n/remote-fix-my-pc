@@ -10,6 +10,7 @@ import ITServices from "./pages/ITServices.tsx";
 import AILabs from "./pages/AILabs.tsx";
 import ContactPage from "./pages/Contact.tsx";
 import GetHelpPage from "./pages/GetHelp.tsx";
+import Privacy from "./pages/Privacy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/ai-labs" element={<AILabs />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/get-help" element={<GetHelpPage />} />
+          <Route path="/privacy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
