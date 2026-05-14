@@ -48,9 +48,9 @@ const Navbar = () => {
       {menuOpen && (
         <div className="absolute top-14 left-0 right-0 bg-background border-b border-border flex flex-col items-center gap-5 py-6 md:hidden">
           {links.map((item) => renderItem(item, () => setMenuOpen(false)))}
-          <a href="/#it-contact" className="text-[14px] tracking-[2px] text-primary uppercase" onClick={() => setMenuOpen(false)}>
+          <Link to="/it-services#it-contact" className="text-[14px] tracking-[2px] text-primary uppercase" onClick={() => setMenuOpen(false)}>
             → Get help
-          </a>
+          </Link>
         </div>
       )}
     </nav>
