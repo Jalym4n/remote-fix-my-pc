@@ -36,7 +36,7 @@ const Navbar = () => {
 
       <div className="hidden md:flex items-center gap-8">
         {links.map((item) => renderItem(item))}
-        <Link to="/contact" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
+        <Link to="/get-help" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
           → Get help
         </Link>
       </div>
