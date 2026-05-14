@@ -6,8 +6,8 @@ const Navbar = () => {
   const links = [
     { label: "IT Services", to: "/it-services" },
     { label: "BitLocker", to: "/bitlocker-recovery", flag: "Sitelink" },
-    { label: "AI Labs", href: "/#ai-labs", soon: true },
-    { label: "Contact", href: "/#it-contact" },
+    { label: "AI Labs", to: "/ai-labs", soon: true },
+    { label: "Contact", to: "/it-services#it-contact" },
   ] as const;
 
   const renderItem = (item: typeof links[number], onClick?: () => void) => {
