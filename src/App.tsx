@@ -9,6 +9,7 @@ import BitlockerRecovery from "./pages/BitlockerRecovery.tsx";
 import ITServices from "./pages/ITServices.tsx";
 import AILabs from "./pages/AILabs.tsx";
 import ContactPage from "./pages/Contact.tsx";
+import GetHelpPage from "./pages/GetHelp.tsx";
 
 const queryClient = new QueryClient();
 
