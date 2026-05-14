@@ -36,9 +36,9 @@ const Navbar = () => {
 
       <div className="hidden md:flex items-center gap-8">
         {links.map((item) => renderItem(item))}
-        <a href="/#it-contact" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
+        <Link to="/it-services#it-contact" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
           → Get help
-        </a>
+        </Link>
       </div>
 
       <button className="md:hidden text-foreground text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
