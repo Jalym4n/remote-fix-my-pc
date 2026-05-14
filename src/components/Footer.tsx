@@ -52,8 +52,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-border mt-10 pt-6 text-xs tracking-[1px] text-faint text-center">
-        © {new Date().getFullYear()} ALTCTRL Solutions — IT Services & AI Labs.
+      <div className="border-t border-border mt-10 pt-6 text-xs tracking-[1px] text-faint text-center flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+        <span>© {new Date().getFullYear()} ALTCTRL Solutions — IT Services & AI Labs.</span>
+        <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
       </div>
     </footer>
   );
