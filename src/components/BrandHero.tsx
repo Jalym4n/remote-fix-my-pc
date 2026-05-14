@@ -47,9 +47,9 @@ const BrandHero = () => {
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="#it-services" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 transition-transform">
+              <Link to="/it-services" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 transition-transform">
                 → Explore IT Services
-              </a>
+              </Link>
               <Link to="/bitlocker-recovery" className="text-[12px] tracking-[3px] text-foreground uppercase border-l border-border pl-3 hover:text-primary transition-colors">
                 → BitLocker landing page
               </Link>
@@ -57,7 +57,7 @@ const BrandHero = () => {
           </div>
 
           {/* AI Labs — In Development */}
-          <a href="#ai-labs" className="group bg-surface2 border border-border hover:border-accent/60 rounded-xl p-7 transition-all">
+          <Link to="/ai-labs" className="group bg-surface2 border border-border hover:border-accent/60 rounded-xl p-7 transition-all">
             <div className="flex items-center justify-between mb-5">
               <span className="text-[11px] tracking-[3px] text-faint uppercase">Division 02</span>
               <span className="inline-flex items-center gap-2 text-[11px] tracking-[2px] uppercase" style={{ color: "hsl(40 90% 60%)" }}>
@@ -79,7 +79,7 @@ const BrandHero = () => {
             <div className="text-[12px] tracking-[3px] text-accent uppercase group-hover:translate-x-1 transition-transform">
               → Follow the lab
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

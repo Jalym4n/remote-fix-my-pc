@@ -6,8 +6,8 @@ const Navbar = () => {
   const links = [
     { label: "IT Services", to: "/it-services" },
     { label: "BitLocker", to: "/bitlocker-recovery", flag: "Sitelink" },
-    { label: "AI Labs", href: "/#ai-labs", soon: true },
-    { label: "Contact", href: "/#it-contact" },
+    { label: "AI Labs", to: "/ai-labs", soon: true },
+    { label: "Contact", to: "/it-services#it-contact" },
   ] as const;
 
   const renderItem = (item: typeof links[number], onClick?: () => void) => {
@@ -20,10 +20,8 @@ const Navbar = () => {
       </>
     );
     const cls = "text-[12px] tracking-[2px] text-dim uppercase hover:text-foreground transition-colors flex items-center gap-2";
-    return "to" in item ? (
+    return (
       <Link key={item.label} to={item.to} className={cls} onClick={onClick}>{inner}</Link>
-    ) : (
-      <a key={item.label} href={item.href} className={cls} onClick={onClick}>{inner}</a>
     );
   };
 
@@ -38,9 +36,9 @@ const Navbar = () => {
 
       <div className="hidden md:flex items-center gap-8">
         {links.map((item) => renderItem(item))}
-        <a href="/#it-contact" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
+        <Link to="/it-services#it-contact" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
           → Get help
-        </a>
+        </Link>
       </div>
 
       <button className="md:hidden text-foreground text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
@@ -50,9 +48,9 @@ const Navbar = () => {
       {menuOpen && (
         <div className="absolute top-14 left-0 right-0 bg-background border-b border-border flex flex-col items-center gap-5 py-6 md:hidden">
           {links.map((item) => renderItem(item, () => setMenuOpen(false)))}
-          <a href="/#it-contact" className="text-[14px] tracking-[2px] text-primary uppercase" onClick={() => setMenuOpen(false)}>
+          <Link to="/it-services#it-contact" className="text-[14px] tracking-[2px] text-primary uppercase" onClick={() => setMenuOpen(false)}>
             → Get help
-          </a>
+          </Link>
         </div>
       )}
     </nav>
