@@ -1,10 +1,45 @@
-import { useEffect } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const GetHelpPage = () => {
   const top = useScrollReveal();
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (submitting) return;
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: String(fd.get("name") || "").trim(),
+      contact: String(fd.get("contact") || "").trim(),
+      clientType: String(fd.get("clientType") || ""),
+      urgency: String(fd.get("urgency") || "Standard"),
+      message: String(fd.get("message") || "").trim(),
+      source: "get-help",
+    };
+    if (!payload.name || !payload.contact || !payload.message) {
+      toast.error("Please fill in name, contact, and message.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-request", { body: payload });
+      if (error) throw error;
+      setSent(true);
+      toast.success("Request sent. We'll be in touch within one business day.");
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("Couldn't send your request. Please call +1-647-643-7979.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     document.title = "Get Help — ALTCTRL Solutions";
@@ -47,22 +82,20 @@ const GetHelpPage = () => {
           </p>
 
           <form
-            action="mailto:jaleed01@altctrl.run"
-            method="post"
-            encType="text/plain"
+            onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-surface2 border-2 border-primary/40 shadow-[0_0_60px_-15px_hsl(var(--primary)/0.35)] rounded-lg p-7 md:p-10"
           >
             <div className="flex flex-col gap-2">
               <label className="text-[11px] tracking-[3px] text-faint uppercase">Your name</label>
-              <input name="name" type="text" required placeholder="Full name" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md" />
+              <input name="name" type="text" required maxLength={120} placeholder="Full name" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md" />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[11px] tracking-[3px] text-faint uppercase">Contact</label>
-              <input name="contact" type="text" required placeholder="Email or phone" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md" />
+              <input name="contact" type="text" required maxLength={200} placeholder="Email or phone" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md" />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[11px] tracking-[3px] text-faint uppercase">Client type</label>
-              <select name="clientType" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md">
+              <select name="clientType" defaultValue="Household / individual" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md">
                 <option>Household / individual</option>
                 <option>Small business</option>
                 <option>Enterprise</option>
@@ -70,7 +103,7 @@ const GetHelpPage = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[11px] tracking-[3px] text-faint uppercase">Urgency</label>
-              <select name="urgency" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md">
+              <select name="urgency" defaultValue="Standard" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors rounded-md">
                 <option>Standard</option>
                 <option>Same-day / rush</option>
                 <option>Critical</option>
@@ -78,10 +111,10 @@ const GetHelpPage = () => {
             </div>
             <div className="flex flex-col gap-2 md:col-span-2">
               <label className="text-[11px] tracking-[3px] text-faint uppercase">What's wrong?</label>
-              <textarea name="message" required placeholder="Device, symptoms, error messages, when it started…" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors resize-none h-36 rounded-md" />
+              <textarea name="message" required maxLength={5000} placeholder="Device, symptoms, error messages, when it started…" className="bg-background border border-border text-foreground text-base p-4 outline-none focus:border-primary transition-colors resize-none h-36 rounded-md" />
             </div>
-            <button type="submit" className="md:col-span-2 w-full font-mono text-[14px] tracking-[3px] text-primary-foreground bg-primary py-5 uppercase cursor-pointer hover:bg-primary/85 transition-colors border-none rounded-md">
-              Send request →
+            <button type="submit" disabled={submitting} className="md:col-span-2 w-full font-mono text-[14px] tracking-[3px] text-primary-foreground bg-primary py-5 uppercase cursor-pointer hover:bg-primary/85 transition-colors border-none rounded-md disabled:opacity-60 disabled:cursor-not-allowed">
+              {submitting ? "Sending…" : sent ? "Sent ✓ — send another?" : "Send request →"}
             </button>
           </form>
         </div>
