@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import BitlockerRecovery from "./pages/BitlockerRecovery.tsx";
 import ITServices from "./pages/ITServices.tsx";
+import AILabs from "./pages/AILabs.tsx";
 
 const queryClient = new QueryClient();
 
