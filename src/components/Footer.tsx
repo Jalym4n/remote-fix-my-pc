@@ -25,6 +25,7 @@ const Footer = () => {
             <li><a href="/bitlocker-recovery" className="text-xs text-primary hover:text-primary/80 transition-colors">BitLocker Recovery →</a></li>
             <li><a href="/#enterprise" className="text-xs text-dim hover:text-primary transition-colors">For business</a></li>
             <li><a href="/#process" className="text-xs text-dim hover:text-primary transition-colors">Process</a></li>
+            <li><a href="/no-fix-no-fee" className="text-xs text-dim hover:text-primary transition-colors">No Fix No Fee</a></li>
             <li><a href="/#it-faq" className="text-xs text-dim hover:text-primary transition-colors">FAQ</a></li>
             <li><a href="/#it-contact" className="text-xs text-dim hover:text-primary transition-colors">Get help</a></li>
           </ul>
