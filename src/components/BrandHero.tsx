@@ -47,9 +47,9 @@ const BrandHero = () => {
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="#it-services" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 transition-transform">
+              <Link to="/it-services" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 transition-transform">
                 → Explore IT Services
-              </a>
+              </Link>
               <Link to="/bitlocker-recovery" className="text-[12px] tracking-[3px] text-foreground uppercase border-l border-border pl-3 hover:text-primary transition-colors">
                 → BitLocker landing page
               </Link>
