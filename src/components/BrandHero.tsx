@@ -57,7 +57,7 @@ const BrandHero = () => {
           </div>
 
           {/* AI Labs — In Development */}
-          <a href="#ai-labs" className="group bg-surface2 border border-border hover:border-accent/60 rounded-xl p-7 transition-all">
+          <Link to="/ai-labs" className="group bg-surface2 border border-border hover:border-accent/60 rounded-xl p-7 transition-all">
             <div className="flex items-center justify-between mb-5">
               <span className="text-[11px] tracking-[3px] text-faint uppercase">Division 02</span>
               <span className="inline-flex items-center gap-2 text-[11px] tracking-[2px] uppercase" style={{ color: "hsl(40 90% 60%)" }}>
