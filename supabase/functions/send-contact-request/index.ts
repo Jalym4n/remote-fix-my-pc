@@ -75,7 +75,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'ALTCTRL Site <onboarding@resend.dev>',
-        to: ['jaleed01@altctrl.run'],
+        to: ['jaleed.a@altctrl.run'],
         reply_to: looksLikeEmail ? contact : undefined,
         subject: `[${urgency}] Help request from ${name}`,
         html,
