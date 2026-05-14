@@ -9,6 +9,7 @@ import BitlockerRecovery from "./pages/BitlockerRecovery.tsx";
 import ITServices from "./pages/ITServices.tsx";
 import AILabs from "./pages/AILabs.tsx";
 import ContactPage from "./pages/Contact.tsx";
+import GetHelpPage from "./pages/GetHelp.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/it-services" element={<ITServices />} />
           <Route path="/ai-labs" element={<AILabs />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/get-help" element={<GetHelpPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

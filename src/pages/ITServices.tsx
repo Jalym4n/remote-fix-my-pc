@@ -232,7 +232,7 @@ const ITServices = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              to="/contact"
+              to="/get-help"
               className="font-mono text-[13px] tracking-[3px] uppercase bg-primary text-primary-foreground px-7 py-4 rounded-md hover:bg-primary/85 transition-colors"
             >
               Contact us →
