@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/bitlocker-recovery" element={<BitlockerRecovery />} />
           <Route path="/it-services" element={<ITServices />} />
           <Route path="/ai-labs" element={<AILabs />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
