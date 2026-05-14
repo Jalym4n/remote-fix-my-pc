@@ -3,11 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const ContactPage = () => {
+const GetHelpPage = () => {
   const top = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Contact — ALTCTRL Solutions";
+    document.title = "Get Help — ALTCTRL Solutions";
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`);
       if (!el) {
@@ -27,7 +27,7 @@ const ContactPage = () => {
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = "https://altctrl.run/contact";
+    canonical.href = "https://altctrl.run/get-help";
   }, []);
 
   return (
@@ -125,4 +125,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default GetHelpPage;
