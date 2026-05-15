@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://altctrl.run/data-recovery</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://altctrl.run/no-fix-no-fee</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
