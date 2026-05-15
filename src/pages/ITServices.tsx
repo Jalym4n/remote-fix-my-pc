@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { applySEO, faqJsonLd, localBusinessJsonLd } from "@/lib/seo";
 
 const trustItems = [
   { k: "No Fix — No Fee", v: "Fixed within 1 week or we don't charge." },
@@ -54,27 +55,13 @@ const ITServices = () => {
   const cta = useScrollReveal();
 
   useEffect(() => {
-    document.title = "IT Services & Repair — ALTCTRL Solutions";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "ALTCTRL IT Services: laptop & desktop repair, remote rescue, data recovery, network setup. Households, small business, and enterprise. No-fix-no-fee. 15% price-beat."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/it-services";
+    applySEO({
+      title: "IT Services & Repair — ALTCTRL Solutions",
+      description:
+        "Laptop & desktop repair, remote rescue, data recovery, network setup. Households to enterprise. No-fix-no-fee, free diagnosis, 15% price-beat.",
+      canonical: "https://altctrl.run/it-services",
+      jsonLd: [localBusinessJsonLd(), faqJsonLd(faqs)],
+    });
   }, []);
 
   return (

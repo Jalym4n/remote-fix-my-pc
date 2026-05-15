@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { applySEO, faqJsonLd } from "@/lib/seo";
 
 const trustItems = [
   { k: "No fix", v: "no fee" },
@@ -69,27 +70,13 @@ const BitlockerRecovery = () => {
   const cta = useScrollReveal();
 
   useEffect(() => {
-    document.title = "BitLocker Recovery — ALTCTRL Solutions";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "Locked out by BitLocker? ALTCTRL provides in-person BitLocker recovery for eligible Windows devices. Free diagnosis, no-fix-no-fee, same-day capacity."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/bitlocker-recovery";
+    applySEO({
+      title: "BitLocker Recovery — ALTCTRL Solutions",
+      description:
+        "Locked out by BitLocker? In-person BitLocker recovery for eligible Windows devices. Free diagnosis, no-fix-no-fee, same-day capacity.",
+      canonical: "https://altctrl.run/bitlocker-recovery",
+      jsonLd: faqJsonLd(faqs),
+    });
   }, []);
 
   return (

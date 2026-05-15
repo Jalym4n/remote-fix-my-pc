@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { applySEO } from "@/lib/seo";
 
 const sections = [
   {
@@ -76,27 +77,12 @@ const Privacy = () => {
   const body = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Privacy Policy — ALTCTRL IT Services";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "Privacy Policy for ALTCTRL Solutions IT Services: how we collect, use, store and protect personal information from repair, BitLocker recovery and remote rescue clients."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/privacy";
+    applySEO({
+      title: "Privacy Policy — ALTCTRL IT Services",
+      description:
+        "How ALTCTRL Solutions IT Services collects, uses, stores and protects personal information from repair, BitLocker recovery and remote rescue clients.",
+      canonical: "https://altctrl.run/privacy",
+    });
   }, []);
 
   const updated = "14 May 2026";
