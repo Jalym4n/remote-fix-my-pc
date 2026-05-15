@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import GtaBadge from "@/components/GtaBadge";
 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const links = [
     { label: "IT Services", to: "/it-services" },
+    { label: "Business IT", to: "/business-it" },
     { label: "BitLocker", to: "/bitlocker-recovery", flag: "Sitelink" },
     { label: "AI Labs", to: "/ai-labs", soon: true },
     { label: "Contact", to: "/contact" },
@@ -34,18 +36,27 @@ const Navbar = () => {
           ALT<span className="text-primary">CTRL</span>
         </span>
         <span className="hidden sm:inline text-[10px] tracking-[3px] text-faint uppercase border border-border px-2 py-0.5 rounded">Solutions</span>
+        <GtaBadge className="hidden lg:inline-flex" />
       </Link>
 
-      <div className="hidden md:flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-6 lg:gap-8">
         {links.map((item) => renderItem(item))}
+        <a href="tel:+16476437979" className="hidden lg:inline text-[12px] tracking-[2px] text-dim hover:text-foreground transition-colors">
+          +1-647-643-7979
+        </a>
         <Link to="/get-help" className="text-[12px] tracking-[3px] text-foreground border border-primary px-5 py-2 uppercase hover:bg-primary hover:text-primary-foreground transition-colors rounded">
           → Get help
         </Link>
       </div>
 
-      <button className="md:hidden text-foreground text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? "✕" : "☰"}
-      </button>
+      <div className="md:hidden flex items-center gap-3">
+        <a href="tel:+16476437979" aria-label="Call ALTCTRL" className="text-[12px] tracking-[2px] text-primary border border-primary/40 px-3 py-1.5 rounded">
+          📞 Call
+        </a>
+        <button className="text-foreground text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? "✕" : "☰"}
+        </button>
+      </div>
 
       {menuOpen && (
         <div className="absolute top-14 left-0 right-0 bg-background border-b border-border flex flex-col items-center gap-5 py-6 md:hidden">
