@@ -6,33 +6,20 @@ import TrustBar from "@/components/TrustBar";
 import ServiceOptions from "@/components/ServiceOptions";
 import TechStack from "@/components/TechStack";
 import About from "@/components/About";
-import FAQ from "@/components/FAQ";
+import FAQ, { aiLabsFaqs } from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import CTABand from "@/components/CTABand";
+import { applySEO, faqJsonLd } from "@/lib/seo";
 
 const AILabs = () => {
   useEffect(() => {
-    document.title = "AI Labs — ALTCTRL";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "ALTCTRL AI Labs: HIPAA-aligned clinical AI infrastructure — secure RAG, fine-tuned open-weight models, and tenant-isolated deployments. Currently in private beta."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/ai-labs";
+    applySEO({
+      title: "AI Labs — ALTCTRL",
+      description:
+        "ALTCTRL AI Labs: HIPAA-aligned clinical AI infrastructure — secure RAG, fine-tuned open-weight models, tenant-isolated deployments. Private beta.",
+      canonical: "https://altctrl.run/ai-labs",
+      jsonLd: faqJsonLd(aiLabsFaqs),
+    });
   }, []);
 
   return (

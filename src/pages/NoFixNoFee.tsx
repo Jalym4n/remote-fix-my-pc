@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { applySEO } from "@/lib/seo";
 
 const sections = [
   {
@@ -52,27 +53,12 @@ const NoFixNoFee = () => {
   const body = useScrollReveal();
 
   useEffect(() => {
-    document.title = "No Fix No Fee — ALTCTRL IT Services";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "No Fix No Fee policy from ALTCTRL Solutions IT Services: if we cannot resolve the fault, you do not pay for the labour. Free diagnosis on repair, plus a 15% price-beat guarantee."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/no-fix-no-fee";
+    applySEO({
+      title: "No Fix No Fee — ALTCTRL IT Services",
+      description:
+        "If we can't resolve the fault, you don't pay for the labour. Free diagnosis on repair, plus a 15% price-beat guarantee on written quotes.",
+      canonical: "https://altctrl.run/no-fix-no-fee",
+    });
   }, []);
 
   const updated = "14 May 2026";

@@ -1,7 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useState } from "react";
 
-const faqs = [
+export const aiLabsFaqs = [
   {
     q: "Are ALTCTRL systems regulated medical devices?",
     a: "No. Our platforms are clinical decision-support and workflow tools operated under clinician-in-the-loop supervision. They are not intended to provide autonomous diagnosis or treatment and are not registered as medical devices.",
@@ -42,7 +42,7 @@ const FAQ = () => {
         </div>
 
         <div className="max-w-3xl">
-          {faqs.map((faq, i) => (
+          {aiLabsFaqs.map((faq, i) => (
             <div key={i} className="border-b border-border">
               <button
                 onClick={() => setOpen(open === i ? null : i)}

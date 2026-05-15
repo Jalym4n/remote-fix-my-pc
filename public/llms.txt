@@ -1,0 +1,20 @@
+# ALTCTRL Solutions
+
+> Sole-operator IT services practice (Greater Toronto & Hamilton Area, plus global remote rescue) specialising in BitLocker recovery, computer repair, data recovery, network and onboarding support — plus ALTCTRL AI Labs, a private-beta R&D division building HIPAA-aligned clinical AI infrastructure.
+
+ALTCTRL Solutions runs two divisions under one operator:
+- IT Services — hands-on repair, BitLocker recovery (in-person only), remote rescue (worldwide), data recovery, network and Wi-Fi setup, virus removal, and small-business / enterprise support. No-fix-no-fee, free diagnosis on repair, 15% price-beat guarantee.
+- AI Labs — research and development of secure, tenant-isolated, HIPAA-aligned clinical AI (RAG over fine-tuned open-weight models). Currently in private beta.
+
+Contact: jaleed01@altctrl.run · +1-647-643-7979
+
+## Pages
+
+- [Home](/): Overview of both ALTCTRL divisions.
+- [IT Services](/it-services): Catalogue of repair, recovery, network and onboarding services for households, small businesses and enterprise.
+- [BitLocker Recovery](/bitlocker-recovery): Flagship in-person BitLocker recovery service for eligible Windows devices.
+- [No Fix No Fee](/no-fix-no-fee): Detailed terms of the no-fix-no-fee policy and 15% price-beat guarantee.
+- [AI Labs](/ai-labs): R&D division building HIPAA-aligned clinical AI infrastructure (private beta).
+- [Contact](/contact): Direct phone, email, service area and response-time tiers.
+- [Get Help](/get-help): Request form for diagnosis, repair, BitLocker recovery or remote rescue.
+- [Privacy Policy](/privacy): Privacy policy for the IT Services division.
