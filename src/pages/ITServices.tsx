@@ -274,6 +274,7 @@ const ITServices = () => {
       </section>
 
       <Footer />
+      <StickyCallButton />
     </div>
   );
 };

@@ -11,7 +11,8 @@ Contact: jaleed01@altctrl.run · +1-647-643-7979
 ## Pages
 
 - [Home](/): Overview of both ALTCTRL divisions.
-- [IT Services](/it-services): Catalogue of repair, recovery, network and onboarding services for households, small businesses and enterprise.
+- [IT Services](/it-services): Catalogue of repair, recovery, network and onboarding services for households across Mississauga and the GTA.
+- [Business IT](/business-it): Managed IT, workstation fleet, network deployment and on-site response for organisations across the Greater Toronto Area.
 - [BitLocker Recovery](/bitlocker-recovery): Flagship in-person BitLocker recovery service for eligible Windows devices.
 - [No Fix No Fee](/no-fix-no-fee): Detailed terms of the no-fix-no-fee policy and 15% price-beat guarantee.
 - [AI Labs](/ai-labs): R&D division building HIPAA-aligned clinical AI infrastructure (private beta).
