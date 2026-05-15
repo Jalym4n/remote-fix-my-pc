@@ -44,7 +44,19 @@ const BrandHero = () => {
               >
                 BitLocker Recovery →
               </Link>
-              {["Remote Rescue", "Managed IT", "Data Recovery"].map((t) => (
+              <Link
+                to="/data-recovery"
+                className="text-[11px] tracking-[1px] text-primary bg-primary/10 border border-primary/40 px-2.5 py-1 rounded hover:bg-primary/20 transition-colors"
+              >
+                Data Recovery →
+              </Link>
+              <Link
+                to="/no-fix-no-fee"
+                className="text-[11px] tracking-[1px] text-primary bg-primary/10 border border-primary/40 px-2.5 py-1 rounded hover:bg-primary/20 transition-colors"
+              >
+                No Fix No Fee →
+              </Link>
+              {["Remote Rescue", "Managed IT"].map((t) => (
                 <span key={t} className="text-[11px] tracking-[1px] text-foreground bg-surface3 border border-border px-2.5 py-1 rounded">{t}</span>
               ))}
             </div>
@@ -52,8 +64,11 @@ const BrandHero = () => {
               <Link to="/it-services" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 transition-transform">
                 → Explore IT Services
               </Link>
-              <Link to="/bitlocker-recovery" className="text-[12px] tracking-[3px] text-foreground uppercase border-l border-border pl-3 hover:text-primary transition-colors">
-                → BitLocker landing page
+              <Link to="/no-fix-no-fee" className="text-[12px] tracking-[3px] text-foreground uppercase border-l border-border pl-3 hover:text-primary transition-colors">
+                → No Fix No Fee
+              </Link>
+              <Link to="/data-recovery" className="text-[12px] tracking-[3px] text-foreground uppercase border-l border-border pl-3 hover:text-primary transition-colors">
+                → Data Recovery
               </Link>
             </div>
           </div>
