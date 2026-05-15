@@ -38,9 +38,9 @@ const audiences = [
 ];
 
 const faqs = [
-  { q: "Where are you based?", a: "Our workshop is UK-based. In-person work covers London and surrounding areas; remote rescue is available globally." },
+  { q: "Where are you based?", a: "Our workshop is based in the Greater Toronto Area, Ontario. In-person work covers Toronto, Mississauga, Brampton, Vaughan, Markham and surrounding GTA municipalities; remote rescue is available globally." },
   { q: "What does no-fix-no-fee mean?", a: "If we can't resolve the issue, you don't pay for the repair. The free diagnosis is also waived entirely when a repair proceeds." },
-  { q: "How does the 15% price-beat work?", a: "Send us any comparable written quote from a UK provider. We will beat it by 15% on equivalent scope. Verbal estimates and unrelated services are excluded." },
+  { q: "How does the 15% price-beat work?", a: "Send us any comparable written quote from a GTA provider. We will beat it by 15% on equivalent scope. Verbal estimates and unrelated services are excluded." },
   { q: "Do you handle enterprise contracts?", a: "Yes. We work with SMEs and larger organisations on ad-hoc and ongoing engagements, including NDAs and on-site work. Get in touch to discuss scope." },
   { q: "How quickly can you start?", a: "Most jobs are triaged within one business day. Same-day rush capacity is held for time-sensitive and business-critical cases." },
   { q: "Is BitLocker recovery handled here too?", a: "Yes — BitLocker recovery is our flagship service and is in-person only. See the dedicated BitLocker recovery page for details." },
