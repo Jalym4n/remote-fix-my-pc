@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyCallButton from "@/components/StickyCallButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { applySEO, faqJsonLd } from "@/lib/seo";
 
@@ -99,10 +100,10 @@ const BitlockerRecovery = () => {
           
           <div className="inline-flex items-center gap-2 text-[11px] tracking-[3px] text-primary uppercase mb-6 border border-primary/40 bg-primary/5 px-3 py-1.5 rounded">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-dot" />
-            Flagship service · In-person only
+            Available today · Mississauga &amp; GTA · In-person
           </div>
           <h1 className="font-display text-[clamp(40px,6.4vw,80px)] leading-[1.04] tracking-[-0.02em] mb-6">
-            Locked out by <span className="text-primary">BitLocker?</span>
+            Mississauga's Same-Day <span className="text-primary">BitLocker Recovery.</span>
           </h1>
           <p className="text-base md:text-lg text-dim leading-relaxed max-w-2xl mb-10">
             ALTCTRL is a specialised IT practice providing BitLocker recovery for eligible Windows devices.
@@ -303,6 +304,7 @@ const BitlockerRecovery = () => {
       </section>
 
       <Footer />
+      <StickyCallButton />
     </div>
   );
 };

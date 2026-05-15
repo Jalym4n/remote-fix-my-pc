@@ -12,7 +12,11 @@ const Footer = () => {
             </span>
             <span className="text-[10px] tracking-[3px] text-faint uppercase border border-border px-2 py-0.5 rounded">Solutions</span>
           </div>
-          <p className="text-xs text-dim leading-relaxed">Two divisions, one operator. Working IT services today, clinical AI infrastructure tomorrow.</p>
+          <p className="text-xs text-dim leading-relaxed mb-3">Two divisions, one operator. Working IT services today, clinical AI infrastructure tomorrow.</p>
+          <span className="inline-flex items-center gap-1.5 text-[10px] tracking-[2px] uppercase border border-border px-2 py-0.5 rounded text-dim">
+            <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse-dot" />
+            Serving Mississauga &amp; the GTA
+          </span>
         </div>
 
         <div>
@@ -23,7 +27,8 @@ const Footer = () => {
           <ul className="flex flex-col gap-2.5">
             <li><a href="/#services" className="text-xs text-dim hover:text-primary transition-colors">Services</a></li>
             <li><a href="/bitlocker-recovery" className="text-xs text-primary hover:text-primary/80 transition-colors">BitLocker Recovery →</a></li>
-            <li><a href="/#enterprise" className="text-xs text-dim hover:text-primary transition-colors">For business</a></li>
+            <li><a href="/business-it" className="text-xs text-dim hover:text-primary transition-colors">Business IT (Managed)</a></li>
+            <li><a href="/data-recovery" className="text-xs text-dim hover:text-primary transition-colors">Data Recovery</a></li>
             <li><a href="/#process" className="text-xs text-dim hover:text-primary transition-colors">Process</a></li>
             <li><a href="/no-fix-no-fee" className="text-xs text-dim hover:text-primary transition-colors">No Fix No Fee</a></li>
             <li><a href="/#it-faq" className="text-xs text-dim hover:text-primary transition-colors">FAQ</a></li>

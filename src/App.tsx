@@ -13,6 +13,7 @@ import GetHelpPage from "./pages/GetHelp.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import NoFixNoFee from "./pages/NoFixNoFee.tsx";
 import DataRecovery from "./pages/DataRecovery.tsx";
+import BusinessIT from "./pages/BusinessIT.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/no-fix-no-fee" element={<NoFixNoFee />} />
           <Route path="/data-recovery" element={<DataRecovery />} />
+          <Route path="/business-it" element={<BusinessIT />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

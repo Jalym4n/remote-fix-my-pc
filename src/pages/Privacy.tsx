@@ -8,7 +8,7 @@ import { applySEO } from "@/lib/seo";
 const sections = [
   {
     h: "1. Who we are",
-    b: "ALTCTRL Solutions (\"ALTCTRL\", \"we\", \"us\") is a sole-operator IT services practice providing computer repair, BitLocker recovery, remote rescue, data recovery and related IT support to households, small businesses and enterprise clients. This Privacy Policy applies exclusively to the IT Services division of ALTCTRL. The AI Labs division operates under a separate policy provided to design partners directly.",
+    b: "ALTCTRL Solutions (\"ALTCTRL\", \"we\", \"us\") is a sole-operator IT services practice based in Mississauga, Ontario, Canada, providing computer repair, BitLocker recovery, remote rescue, data recovery and related IT support to households, small businesses and enterprise clients across the Greater Toronto Area, with remote rescue offered worldwide. This Privacy Policy applies exclusively to the IT Services and Business IT divisions of ALTCTRL. The AI Labs division operates under a separate policy provided to design partners directly.",
   },
   {
     h: "2. Scope",
@@ -68,7 +68,7 @@ const sections = [
   },
   {
     h: "16. Contact",
-    b: "Questions, requests or complaints regarding this Privacy Policy or our handling of your information can be sent to jaleed01@altctrl.run. We respond to privacy enquiries within five business days.",
+    b: "Questions, requests or complaints regarding this Privacy Policy or our handling of your information can be sent to jaleed01@altctrl.run, or by post to ALTCTRL Solutions, Mississauga, Ontario, Canada. We respond to privacy enquiries within five business days.",
   },
 ];
 

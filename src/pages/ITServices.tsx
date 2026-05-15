@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyCallButton from "@/components/StickyCallButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { applySEO, faqJsonLd, localBusinessJsonLd } from "@/lib/seo";
 
@@ -13,15 +14,22 @@ const trustItems = [
   { k: "Same-day", v: "Waived on Repair" },
 ];
 
-const services = [
+const householdServices = [
   { t: "Laptop & desktop repair", d: "Cracked screens, dead batteries, won't boot, overheating, OS reinstalls, component upgrades.", p: "From CA$30" },
   { t: "Remote rescue", d: "Global remote support for software issues — virus removal, slow PC, setup, configuration. Guided onboarding for non-technical users.", p: "From CA$30" },
   { t: "BitLocker recovery", d: "In-person recovery for eligible Windows devices. Our flagship service — handled with verified ownership.", p: "In-person only", href: "/bitlocker-recovery" },
-  { t: "Data recovery", d: "Accidentally deleted files, corrupted drives, failed SSDs. Assessment first — quote on findings.", p: "Quote on assessment" },
+  { t: "Data recovery", d: "Accidentally deleted files, corrupted drives, failed SSDs. Assessment first — quote on findings.", p: "Quote on assessment", href: "/data-recovery" },
   { t: "Virus & malware removal", d: "Ransomware, adware, spyware. Full clean-up plus hardening to prevent re-infection.", p: "From CA$25" },
   { t: "Speed & tune-up", d: "Slow boot, lag, storage pressure. Deep clean, optimisation, bloatware removal.", p: "From CA$25" },
-  { t: "Network & Wi-Fi", d: "Dead zones, slow speeds, router and printer configuration. Home and small-business networks.", p: "From CA$30" },
+  { t: "Home Wi-Fi & printers", d: "Dead zones, slow speeds, router and printer configuration for home networks.", p: "From CA$30" },
   { t: "Setup & onboarding", d: "New device setup, data migration, account configuration, peripheral installation.", p: "From CA$25" },
+];
+
+const businessServices = [
+  { t: "Managed IT support", d: "Ongoing technical support with defined response windows and a single point of contact.", p: "Engagement-based", href: "/business-it" },
+  { t: "Workstation fleet", d: "Procurement guidance, standard build deployment and lifecycle planning for office workstations.", p: "Quote on scope", href: "/business-it" },
+  { t: "Office network & Wi-Fi", d: "Site survey, business-grade router and access-point deployment, segmented guest networks, VPN.", p: "Quote on scope", href: "/business-it" },
+  { t: "On-site triage (GTA)", d: "Same-day on-site response across the GTA for business-impacting incidents.", p: "Engagement-based", href: "/business-it" },
 ];
 
 const steps = [
@@ -138,7 +146,7 @@ const ITServices = () => {
         </div>
       </section>
 
-      {/* Service catalogue */}
+      {/* Service catalogue — segmented */}
       <section className="px-6 md:px-20 py-20 md:py-24 bg-surface bg-noise">
         <div ref={cat.ref} className={`max-w-6xl mx-auto ${cat.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           <div className="text-[12px] tracking-[4px] text-faint uppercase mb-3">// service catalogue</div>
@@ -146,24 +154,53 @@ const ITServices = () => {
             What we <span className="text-primary">fix.</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-md overflow-hidden">
-            {services.map((s) => {
-              const inner = (
-                <>
+          {/* For Households */}
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="text-[11px] tracking-[3px] text-primary uppercase border border-primary/40 bg-primary/5 px-2.5 py-1 rounded">For Households</span>
+              <span className="text-xs text-faint tracking-[1px]">Personal devices · Same-day capacity · From CA$25</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-md overflow-hidden">
+              {householdServices.map((s) => {
+                const inner = (
+                  <>
+                    <div className="font-display text-[20px] tracking-[-0.01em] text-foreground mb-2">{s.t}</div>
+                    <p className="text-sm text-dim leading-relaxed mb-4">{s.d}</p>
+                    <div className="text-[12px] tracking-[2px] text-primary uppercase">
+                      {s.href ? "→ Learn more" : `→ ${s.p}`}
+                    </div>
+                  </>
+                );
+                const cls = "bg-surface2 p-7 relative transition-colors hover:bg-surface block";
+                return s.href ? (
+                  <Link key={s.t} to={s.href} className={cls}>{inner}</Link>
+                ) : (
+                  <div key={s.t} className={cls}>{inner}</div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* For Businesses */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="text-[11px] tracking-[3px] text-primary uppercase border border-primary/40 bg-primary/5 px-2.5 py-1 rounded">For Businesses</span>
+              <span className="text-xs text-faint tracking-[1px]">Managed · NDA-ready · GTA on-site</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-md overflow-hidden">
+              {businessServices.map((s) => (
+                <Link key={s.t} to={s.href!} className="bg-surface2 p-7 relative transition-colors hover:bg-surface block">
                   <div className="font-display text-[20px] tracking-[-0.01em] text-foreground mb-2">{s.t}</div>
                   <p className="text-sm text-dim leading-relaxed mb-4">{s.d}</p>
-                  <div className="text-[12px] tracking-[2px] text-primary uppercase">
-                    {s.href ? "→ Get help now" : `→ ${s.p}`}
-                  </div>
-                </>
-              );
-              const cls = "bg-surface2 p-7 relative transition-colors hover:bg-surface block";
-              return s.href ? (
-                <Link key={s.t} to={s.href} className={cls}>{inner}</Link>
-              ) : (
-                <div key={s.t} className={cls}>{inner}</div>
-              );
-            })}
+                  <div className="text-[12px] tracking-[2px] text-primary uppercase">→ {s.p}</div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-5">
+              <Link to="/business-it" className="text-[12px] tracking-[3px] text-primary uppercase hover:translate-x-1 inline-block transition-transform">
+                → See all business-only services
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -237,6 +274,7 @@ const ITServices = () => {
       </section>
 
       <Footer />
+      <StickyCallButton />
     </div>
   );
 };
