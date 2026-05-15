@@ -43,27 +43,12 @@ const GetHelpPage = () => {
   };
 
   useEffect(() => {
-    document.title = "Get Help — ALTCTRL Solutions";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "Contact ALTCTRL Solutions — call +1-647-643-7979 or email jaleed01@altctrl.run. Free diagnosis, no-fix-no-fee, response within one business day."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/get-help";
+    applySEO({
+      title: "Get Help — ALTCTRL Solutions",
+      description:
+        "Request IT support — call +1-647-643-7979 or email jaleed01@altctrl.run. Free diagnosis, no-fix-no-fee, reply within one business day.",
+      canonical: "https://altctrl.run/get-help",
+    });
   }, []);
 
   return (
