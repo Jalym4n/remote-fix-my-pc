@@ -14,15 +14,22 @@ const trustItems = [
   { k: "Same-day", v: "Waived on Repair" },
 ];
 
-const services = [
+const householdServices = [
   { t: "Laptop & desktop repair", d: "Cracked screens, dead batteries, won't boot, overheating, OS reinstalls, component upgrades.", p: "From CA$30" },
   { t: "Remote rescue", d: "Global remote support for software issues — virus removal, slow PC, setup, configuration. Guided onboarding for non-technical users.", p: "From CA$30" },
   { t: "BitLocker recovery", d: "In-person recovery for eligible Windows devices. Our flagship service — handled with verified ownership.", p: "In-person only", href: "/bitlocker-recovery" },
-  { t: "Data recovery", d: "Accidentally deleted files, corrupted drives, failed SSDs. Assessment first — quote on findings.", p: "Quote on assessment" },
+  { t: "Data recovery", d: "Accidentally deleted files, corrupted drives, failed SSDs. Assessment first — quote on findings.", p: "Quote on assessment", href: "/data-recovery" },
   { t: "Virus & malware removal", d: "Ransomware, adware, spyware. Full clean-up plus hardening to prevent re-infection.", p: "From CA$25" },
   { t: "Speed & tune-up", d: "Slow boot, lag, storage pressure. Deep clean, optimisation, bloatware removal.", p: "From CA$25" },
-  { t: "Network & Wi-Fi", d: "Dead zones, slow speeds, router and printer configuration. Home and small-business networks.", p: "From CA$30" },
+  { t: "Home Wi-Fi & printers", d: "Dead zones, slow speeds, router and printer configuration for home networks.", p: "From CA$30" },
   { t: "Setup & onboarding", d: "New device setup, data migration, account configuration, peripheral installation.", p: "From CA$25" },
+];
+
+const businessServices = [
+  { t: "Managed IT support", d: "Ongoing technical support with defined response windows and a single point of contact.", p: "Engagement-based", href: "/business-it" },
+  { t: "Workstation fleet", d: "Procurement guidance, standard build deployment and lifecycle planning for office workstations.", p: "Quote on scope", href: "/business-it" },
+  { t: "Office network & Wi-Fi", d: "Site survey, business-grade router and access-point deployment, segmented guest networks, VPN.", p: "Quote on scope", href: "/business-it" },
+  { t: "On-site triage (GTA)", d: "Same-day on-site response across the GTA for business-impacting incidents.", p: "Engagement-based", href: "/business-it" },
 ];
 
 const steps = [
