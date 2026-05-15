@@ -304,6 +304,7 @@ const BitlockerRecovery = () => {
       </section>
 
       <Footer />
+      <StickyCallButton />
     </div>
   );
 };

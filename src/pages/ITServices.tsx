@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyCallButton from "@/components/StickyCallButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { applySEO, faqJsonLd, localBusinessJsonLd } from "@/lib/seo";
 
