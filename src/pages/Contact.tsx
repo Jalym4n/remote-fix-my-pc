@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { applySEO, localBusinessJsonLd } from "@/lib/seo";
 
 const responseTiers = [
   {
@@ -34,27 +35,13 @@ const ContactPage = () => {
   const sla = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Contact — ALTCTRL Solutions";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "Contact ALTCTRL Solutions — call +1-647-643-7979 or email jaleed01@altctrl.run. Serving the Greater Toronto and Hamilton Area. Standard, same-day rush and after-hours response tiers."
-    );
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://altctrl.run/contact";
+    applySEO({
+      title: "Contact — ALTCTRL Solutions",
+      description:
+        "Contact ALTCTRL Solutions — call +1-647-643-7979 or email jaleed01@altctrl.run. Serving the Greater Toronto & Hamilton Area.",
+      canonical: "https://altctrl.run/contact",
+      jsonLd: localBusinessJsonLd(),
+    });
   }, []);
 
   return (

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { applySEO } from "@/lib/seo";
 
 const GetHelpPage = () => {
   const top = useScrollReveal();
