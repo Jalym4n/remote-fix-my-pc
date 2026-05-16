@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -20,26 +20,32 @@ const trustItems = [
 
 const services = [
   {
+    id: "managed-it",
     t: "Managed IT support",
     d: "Ongoing technical support for small and mid-sized organisations across the Greater Toronto Area. Defined response windows, single point of contact, monthly engagement reporting.",
   },
   {
+    id: "fleet",
     t: "Workstation fleet management",
     d: "Procurement guidance, standard build deployment, lifecycle replacement planning and asset documentation for office workstations.",
   },
   {
+    id: "network",
     t: "Network & Wi-Fi for offices",
     d: "Site survey, structured cabling, business-grade router and access-point deployment, segmented guest networks, VPN configuration.",
   },
   {
+    id: "migrations",
     t: "Account & tenant migrations",
     d: "Microsoft 365 and Google Workspace tenant setup, migration, and identity hardening. SSO and MFA enforcement across user populations.",
   },
   {
+    id: "triage",
     t: "On-site triage & remediation",
     d: "Same-day on-site response across the GTA for business-impacting incidents. Documented findings and a written remediation plan for every visit.",
   },
   {
+    id: "compliance",
     t: "Compliance-aware data handling",
     d: "Procedures aligned with HIPAA-style data-handling expectations for clinical and professional practices: encrypted-in-transit transfer, access logging, and secure media disposal.",
   },
@@ -81,6 +87,9 @@ const BusinessIT = () => {
   const proc = useScrollReveal();
   const faq = useScrollReveal();
   const cta = useScrollReveal();
+  const [searchParams] = useSearchParams();
+  const serviceParam = searchParams.get("service");
+  const consultationParam = serviceParam === "consultation";
 
   useEffect(() => {
     applySEO({
@@ -91,6 +100,16 @@ const BusinessIT = () => {
       jsonLd: [localBusinessJsonLd(), faqJsonLd(faqs)],
     });
   }, []);
+
+  useEffect(() => {
+    if (!serviceParam) return;
+    const targetId = consultationParam ? "engagement-cta" : `service-${serviceParam}`;
+    const el = document.getElementById(targetId);
+    if (el) {
+      // Slight delay so layout settles after SEO/JSON-LD effect.
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+    }
+  }, [serviceParam, consultationParam]);
 
   return (
     <div className="bg-background min-h-screen text-foreground">
@@ -155,7 +174,13 @@ const BusinessIT = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s) => (
-              <div key={s.t} className="bg-surface2 border border-border rounded-md p-7 hover:border-primary/60 transition-colors">
+              <div
+                key={s.t}
+                id={`service-${s.id}`}
+                className={`bg-surface2 border rounded-md p-7 transition-colors scroll-mt-32 ${
+                  serviceParam === s.id ? "border-primary" : "border-border hover:border-primary/60"
+                }`}
+              >
                 <div className="font-display text-xl text-foreground mb-3">{s.t}</div>
                 <p className="text-sm text-dim leading-relaxed">{s.d}</p>
               </div>
@@ -205,7 +230,7 @@ const BusinessIT = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-20 py-20 md:py-24 bg-surface bg-noise bg-circuit relative">
+      <section id="engagement-cta" className="scroll-mt-32 px-6 md:px-20 py-20 md:py-24 bg-surface bg-noise bg-circuit relative">
         <div className="absolute inset-0 glow-bottom pointer-events-none" />
         <div ref={cta.ref} className={`relative max-w-3xl mx-auto text-center ${cta.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           <div className="text-[12px] tracking-[4px] text-faint uppercase mb-3">// next step</div>
