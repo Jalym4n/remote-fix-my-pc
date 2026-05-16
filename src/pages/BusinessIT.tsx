@@ -174,7 +174,13 @@ const BusinessIT = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s) => (
-              <div key={s.t} className="bg-surface2 border border-border rounded-md p-7 hover:border-primary/60 transition-colors">
+              <div
+                key={s.t}
+                id={`service-${s.id}`}
+                className={`bg-surface2 border rounded-md p-7 transition-colors scroll-mt-32 ${
+                  serviceParam === s.id ? "border-primary" : "border-border hover:border-primary/60"
+                }`}
+              >
                 <div className="font-display text-xl text-foreground mb-3">{s.t}</div>
                 <p className="text-sm text-dim leading-relaxed">{s.d}</p>
               </div>
