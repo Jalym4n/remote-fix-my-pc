@@ -20,26 +20,32 @@ const trustItems = [
 
 const services = [
   {
+    id: "managed-it",
     t: "Managed IT support",
     d: "Ongoing technical support for small and mid-sized organisations across the Greater Toronto Area. Defined response windows, single point of contact, monthly engagement reporting.",
   },
   {
+    id: "fleet",
     t: "Workstation fleet management",
     d: "Procurement guidance, standard build deployment, lifecycle replacement planning and asset documentation for office workstations.",
   },
   {
+    id: "network",
     t: "Network & Wi-Fi for offices",
     d: "Site survey, structured cabling, business-grade router and access-point deployment, segmented guest networks, VPN configuration.",
   },
   {
+    id: "migrations",
     t: "Account & tenant migrations",
     d: "Microsoft 365 and Google Workspace tenant setup, migration, and identity hardening. SSO and MFA enforcement across user populations.",
   },
   {
+    id: "triage",
     t: "On-site triage & remediation",
     d: "Same-day on-site response across the GTA for business-impacting incidents. Documented findings and a written remediation plan for every visit.",
   },
   {
+    id: "compliance",
     t: "Compliance-aware data handling",
     d: "Procedures aligned with HIPAA-style data-handling expectations for clinical and professional practices: encrypted-in-transit transfer, access logging, and secure media disposal.",
   },
