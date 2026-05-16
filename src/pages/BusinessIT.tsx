@@ -87,6 +87,9 @@ const BusinessIT = () => {
   const proc = useScrollReveal();
   const faq = useScrollReveal();
   const cta = useScrollReveal();
+  const [searchParams] = useSearchParams();
+  const serviceParam = searchParams.get("service");
+  const consultationParam = serviceParam === "consultation";
 
   useEffect(() => {
     applySEO({
@@ -97,6 +100,16 @@ const BusinessIT = () => {
       jsonLd: [localBusinessJsonLd(), faqJsonLd(faqs)],
     });
   }, []);
+
+  useEffect(() => {
+    if (!serviceParam) return;
+    const targetId = consultationParam ? "engagement-cta" : `service-${serviceParam}`;
+    const el = document.getElementById(targetId);
+    if (el) {
+      // Slight delay so layout settles after SEO/JSON-LD effect.
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+    }
+  }, [serviceParam, consultationParam]);
 
   return (
     <div className="bg-background min-h-screen text-foreground">
