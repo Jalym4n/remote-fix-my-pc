@@ -230,7 +230,7 @@ const BusinessIT = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-20 py-20 md:py-24 bg-surface bg-noise bg-circuit relative">
+      <section id="engagement-cta" className="scroll-mt-32 px-6 md:px-20 py-20 md:py-24 bg-surface bg-noise bg-circuit relative">
         <div className="absolute inset-0 glow-bottom pointer-events-none" />
         <div ref={cta.ref} className={`relative max-w-3xl mx-auto text-center ${cta.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           <div className="text-[12px] tracking-[4px] text-faint uppercase mb-3">// next step</div>
