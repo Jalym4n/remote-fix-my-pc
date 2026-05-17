@@ -113,6 +113,14 @@ const BusinessIT = () => {
     }
   }, [serviceParam, consultationParam]);
 
+  useEffect(() => {
+    if (!assetParam) return;
+    const el = document.getElementById(`asset-${assetParam}`);
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+    }
+  }, [assetParam]);
+
   return (
     <div className="bg-background min-h-screen text-foreground">
       <Navbar />
