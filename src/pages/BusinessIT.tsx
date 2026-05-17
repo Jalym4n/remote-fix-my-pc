@@ -225,7 +225,7 @@ const BusinessIT = () => {
           <h2 className="font-display text-[clamp(30px,4vw,46px)] tracking-[-0.02em] mb-12 max-w-3xl">
             Published rates, <span className="text-primary">no surprises.</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div
               id="asset-price-diag"
               className={`bg-surface2 border rounded-md p-7 scroll-mt-32 transition-colors ${
@@ -252,6 +252,21 @@ const BusinessIT = () => {
               <div className="text-[11px] tracking-[2px] text-faint uppercase mb-4">Same-day GTA response</div>
               <p className="text-sm text-dim leading-relaxed">
                 Same-day on-site response across the Greater Toronto Area for business-impacting incidents. Every visit closes with documented findings and a written remediation plan.
+              </p>
+            </div>
+            <div
+              id="asset-price-monthly"
+              className={`bg-surface2 border rounded-md p-7 scroll-mt-32 transition-colors ${
+                assetParam === "price-monthly" ? "border-primary" : "border-border"
+              }`}
+            >
+              <div className="text-[11px] tracking-[3px] text-primary uppercase mb-3">Monthly managed IT</div>
+              <div className="font-display text-4xl text-foreground mb-2">
+                <span className="text-faint text-base tracking-[2px] uppercase mr-2">From</span>CA$50.00
+              </div>
+              <div className="text-[11px] tracking-[2px] text-faint uppercase mb-4">Per device · per month</div>
+              <p className="text-sm text-dim leading-relaxed">
+                Ongoing managed support billed per device, per month. Defined response windows, single point of contact, and a written monthly engagement summary.
               </p>
             </div>
           </div>
