@@ -218,6 +218,46 @@ const BusinessIT = () => {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section id="pricing" className="scroll-mt-32 px-6 md:px-20 py-20 md:py-24 bg-background">
+        <div ref={pricing.ref} className={`max-w-6xl mx-auto ${pricing.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
+          <div className="text-[12px] tracking-[4px] text-faint uppercase mb-3">// transparent pricing</div>
+          <h2 className="font-display text-[clamp(30px,4vw,46px)] tracking-[-0.02em] mb-12 max-w-3xl">
+            Published rates, <span className="text-primary">no surprises.</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div
+              id="asset-price-diag"
+              className={`bg-surface2 border rounded-md p-7 scroll-mt-32 transition-colors ${
+                assetParam === "price-diag" ? "border-primary" : "border-border"
+              }`}
+            >
+              <div className="text-[11px] tracking-[3px] text-primary uppercase mb-3">Initial diagnosis</div>
+              <div className="font-display text-4xl text-foreground mb-2">CA$0.00</div>
+              <div className="text-[11px] tracking-[2px] text-faint uppercase mb-4">Free technical triage</div>
+              <p className="text-sm text-dim leading-relaxed">
+                Initial assessment of your environment at no cost. We return a written next-step within one business day, with a fixed-fee statement of work if you choose to proceed.
+              </p>
+            </div>
+            <div
+              id="asset-price-triage"
+              className={`bg-surface2 border rounded-md p-7 scroll-mt-32 transition-colors ${
+                assetParam === "price-triage" ? "border-primary" : "border-border"
+              }`}
+            >
+              <div className="text-[11px] tracking-[3px] text-primary uppercase mb-3">On-site incident triage</div>
+              <div className="font-display text-4xl text-foreground mb-2">
+                <span className="text-faint text-base tracking-[2px] uppercase mr-2">From</span>CA$100.00
+              </div>
+              <div className="text-[11px] tracking-[2px] text-faint uppercase mb-4">Same-day GTA response</div>
+              <p className="text-sm text-dim leading-relaxed">
+                Same-day on-site response across the Greater Toronto Area for business-impacting incidents. Every visit closes with documented findings and a written remediation plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="px-6 md:px-20 py-20 md:py-24 bg-background">
         <div ref={faq.ref} className={`max-w-4xl mx-auto ${faq.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
