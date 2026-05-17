@@ -225,7 +225,7 @@ const BusinessIT = () => {
           <h2 className="font-display text-[clamp(30px,4vw,46px)] tracking-[-0.02em] mb-12 max-w-3xl">
             Published rates, <span className="text-primary">no surprises.</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div
               id="asset-price-diag"
               className={`bg-surface2 border rounded-md p-7 scroll-mt-32 transition-colors ${
