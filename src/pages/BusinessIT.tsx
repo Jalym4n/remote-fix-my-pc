@@ -85,10 +85,12 @@ const BusinessIT = () => {
   const hero = useScrollReveal();
   const cat = useScrollReveal();
   const proc = useScrollReveal();
+  const pricing = useScrollReveal();
   const faq = useScrollReveal();
   const cta = useScrollReveal();
   const [searchParams] = useSearchParams();
   const serviceParam = searchParams.get("service");
+  const assetParam = searchParams.get("asset");
   const consultationParam = serviceParam === "consultation";
 
   useEffect(() => {
