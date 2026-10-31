@@ -1,21 +1,27 @@
 # ALTCTRL Solutions
 
-> Sole-operator IT services practice (Greater Toronto & Hamilton Area, plus global remote rescue) specialising in BitLocker recovery, computer repair, data recovery, network and onboarding support — plus ALTCTRL AI Labs, a private-beta R&D division building HIPAA-aligned clinical AI infrastructure.
+> ALTCTRL is a clinical workflow software company based in Mississauga, Ontario. It builds Windows-native, Canadian-hosted software that closes the loops healthcare leaves open, starting with RetinaLoop for diabetic eye care (pilot program, Ontario). It also runs ALTCTRL Services, a hands-on IT practice for clinics and households across the GTA, and ALTCTRL Labs, its R&D arm.
 
-ALTCTRL Solutions runs two divisions under one operator:
-- IT Services — hands-on repair, BitLocker recovery (in-person only), remote rescue (worldwide), data recovery, network and Wi-Fi setup, virus removal, and small-business / enterprise support. No-fix-no-fee, free diagnosis on repair, 15% price-beat guarantee.
-- AI Labs — research and development of secure, tenant-isolated, HIPAA-aligned clinical AI (RAG over fine-tuned open-weight models). Currently in private beta.
+- Products: RetinaLoop helps optometry and retina clinics find overdue diabetic patients, recall them, report results to family doctors and send triaged referrals. Workflow software only: it does not diagnose or grade images. Currently a pilot program with a small founding cohort of Ontario clinics.
+- Services (live): managed IT for clinics and small offices; same-day repair, BitLocker recovery (in-person only), data recovery and remote rescue for households. No fix, no fee.
+- Labs (R&D): prototyping privacy-first clinical software and private AI infrastructure with design partners. Designed for PHIPA with Canadian data residency.
 
 Contact: jaleed01@altctrl.run · +1-647-643-7979
 
 ## Pages
 
-- [Home](/): Overview of both ALTCTRL divisions.
-- [IT Services](/it-services): Catalogue of repair, recovery, network and onboarding services for households across Mississauga and the GTA.
-- [Business IT](/business-it): Managed IT, workstation fleet, network deployment and on-site response for organisations across the Greater Toronto Area.
-- [BitLocker Recovery](/bitlocker-recovery): Flagship in-person BitLocker recovery service for eligible Windows devices.
-- [No Fix No Fee](/no-fix-no-fee): Detailed terms of the no-fix-no-fee policy and 15% price-beat guarantee.
-- [AI Labs](/ai-labs): R&D division building HIPAA-aligned clinical AI infrastructure (private beta).
-- [Contact](/contact): Direct phone, email, service area and response-time tiers.
-- [Get Help](/get-help): Request form for diagnosis, repair, BitLocker recovery or remote rescue.
-- [Privacy Policy](/privacy): Privacy policy for the IT Services division.
+- [Home](/): Company overview, products first.
+- [Products](/products): Product index.
+- [RetinaLoop](/products/retinaloop): Diabetic eye-care recall, report-back and referral software. Pilot signup for Ontario clinics.
+- [Services](/services): Hub for Business IT and home IT.
+- [Business IT](/business-it): Managed IT, workstation fleet, network and on-site response for clinics and organisations across the GTA.
+- [IT Services](/it-services): Repair, recovery, network and onboarding services for households across Mississauga and the GTA.
+- [BitLocker Recovery](/bitlocker-recovery): In-person BitLocker recovery for eligible Windows devices.
+- [Data Recovery](/data-recovery): Assessment-first data recovery.
+- [No Fix No Fee](/no-fix-no-fee): Terms of the no-fix-no-fee policy and 15% price-beat guarantee.
+- [ALTCTRL Labs](/ai-labs): R&D arm for clinical software and private AI infrastructure.
+- [Company](/company): About ALTCTRL and how we build.
+- [Security](/security): Privacy and security approach for ALTCTRL products.
+- [Contact](/contact): Contact form with topic routing, phone, email and service area.
+- [Get Help](/get-help): Request form for IT diagnosis, repair or remote rescue.
+- [Privacy Policy](/privacy): Privacy policy for the website, pilot forms and IT services.

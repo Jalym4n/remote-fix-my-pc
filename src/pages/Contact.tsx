@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { applySEO, localBusinessJsonLd } from "@/lib/seo";
 
@@ -93,6 +94,20 @@ const ContactPage = () => {
               Send a request form →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Message form with intent routing */}
+      <section id="message" className="scroll-mt-20 px-6 md:px-20 py-20 md:py-24 bg-background border-b border-border">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-[12px] tracking-[4px] text-faint uppercase mb-3">// send a message</div>
+          <h2 className="font-display text-[clamp(30px,4vw,46px)] tracking-[-0.02em] mb-4 leading-[1.1]">
+            Tell us what <span className="text-primary">you need.</span>
+          </h2>
+          <p className="text-base text-dim leading-relaxed mb-8">
+            Product pilots, clinic IT, home repair, partnerships or press: pick a topic and it reaches the right inbox.
+          </p>
+          <ContactForm />
         </div>
       </section>
 

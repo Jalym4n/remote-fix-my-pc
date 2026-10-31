@@ -8,7 +8,7 @@ import { applySEO } from "@/lib/seo";
 const sections = [
   {
     h: "1. Who we are",
-    b: "ALTCTRL Solutions (\"ALTCTRL\", \"we\", \"us\") is a sole-operator IT services practice based in Mississauga, Ontario, Canada, providing computer repair, BitLocker recovery, remote rescue, data recovery and related IT support to households, small businesses and enterprise clients across the Greater Toronto Area, with remote rescue offered worldwide. This Privacy Policy applies exclusively to the IT Services and Business IT divisions of ALTCTRL. The AI Labs division operates under a separate policy provided to design partners directly.",
+    b: "ALTCTRL Solutions (\"ALTCTRL\", \"we\", \"us\") is a clinical workflow software company and IT services practice based in Mississauga, Ontario, Canada. We build software for healthcare clinics, starting with the RetinaLoop pilot, and we provide computer repair, BitLocker recovery, remote rescue, data recovery and related IT support to households, small businesses and clinics across the Greater Toronto Area, with remote rescue offered worldwide. This Privacy Policy covers the altctrl.run website (including its contact and pilot forms) and our IT Services and Business IT work. Patient data processed inside our products is covered separately by each clinic's agreement with ALTCTRL (see section 15).",
   },
   {
     h: "2. Scope",
@@ -55,19 +55,31 @@ const sections = [
     b: "Subject to applicable law, you have the right to: access the personal information we hold about you; request correction of inaccurate information; request deletion where we are no longer required to retain it; restrict or object to certain processing; and lodge a complaint with the relevant data-protection authority. To exercise any of these rights, contact us using the details below.",
   },
   {
-    h: "13. Cookies",
-    b: "altctrl.run uses only the minimum cookies necessary for the site to function. We do not deploy advertising trackers, behavioural profiling pixels or third-party analytics that identify individual visitors.",
+    h: "13. Pilot and contact form data",
+    b: "When you request a RetinaLoop pilot spot or send us a message, we collect the business contact details you enter: your name, role, clinic or organisation name, city, clinic type, number of locations, the practice software and imaging equipment you use (if you choose to tell us), work email, phone number (optional) and any notes. We use this only to assess fit for the pilot, reply to you and book a call. We do not sell it or use it for unrelated marketing. Pilot and contact enquiries are kept for up to 24 months after our last contact with you, then deleted, unless they become part of a signed agreement. You can ask us to delete them sooner at any time.",
   },
   {
-    h: "14. Children",
+    h: "14. We never ask for patient information through this website",
+    b: "Our website forms are for business contact details only. Please do not include patient names, health card numbers, images, diagnoses or any other personal health information in a form or email to us. If patient information is sent to us by mistake, we will delete it and let you know.",
+  },
+  {
+    h: "15. Product data",
+    b: "Personal health information processed by ALTCTRL products, such as RetinaLoop, is handled under each clinic's PHIPA-compliant agreement with ALTCTRL, which is signed before any patient data is processed. Our product privacy and security design is described on our security page at altctrl.run/security.",
+  },
+  {
+    h: "16. Cookies and measurement",
+    b: "altctrl.run uses only the minimum cookies necessary for the site to function, plus the Google Ads tag, which measures whether visits from our ads lead to a form submission or call. We do not use behavioural profiling pixels or analytics that identify individual visitors by name, and names, contact details and messages from our forms are never sent to Google.",
+  },
+  {
+    h: "17. Children",
     b: "Our services are intended for adults. We do not knowingly collect personal information from children under 16. If you believe a child has provided us with personal information, please contact us and we will delete it.",
   },
   {
-    h: "15. Changes to this policy",
+    h: "18. Changes to this policy",
     b: "We may update this Privacy Policy from time to time to reflect changes in our practice or in applicable law. The current version is always available at altctrl.run/privacy with the effective date shown below.",
   },
   {
-    h: "16. Contact",
+    h: "19. Contact",
     b: "Questions, requests or complaints regarding this Privacy Policy or our handling of your information can be sent to jaleed01@altctrl.run, or by post to ALTCTRL Solutions, Mississauga, Ontario, Canada. We respond to privacy enquiries within five business days.",
   },
 ];
@@ -78,14 +90,14 @@ const Privacy = () => {
 
   useEffect(() => {
     applySEO({
-      title: "Privacy Policy — ALTCTRL IT Services",
+      title: "Privacy Policy — ALTCTRL Solutions",
       description:
-        "How ALTCTRL Solutions IT Services collects, uses, stores and protects personal information from repair, BitLocker recovery and remote rescue clients.",
+        "How ALTCTRL Solutions collects, uses, stores and protects personal information from website visitors, pilot applicants and IT services clients.",
       canonical: "https://altctrl.run/privacy",
     });
   }, []);
 
-  const updated = "14 May 2026";
+  const updated = "31 October 2026";
 
   return (
     <div className="bg-background min-h-screen text-foreground">
@@ -102,13 +114,13 @@ const Privacy = () => {
         <div ref={hero.ref} className={`relative z-[2] max-w-4xl mx-auto ${hero.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           <div className="inline-flex items-center gap-2 text-[11px] tracking-[3px] text-primary uppercase mb-6 border border-primary/40 bg-primary/5 px-3 py-1.5 rounded">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-dot" />
-            IT Services · Policy
+            ALTCTRL · Policy
           </div>
           <h1 className="font-display text-[clamp(36px,5.4vw,68px)] leading-[1.05] tracking-[-0.02em] mb-5">
             Privacy <span className="text-primary">Policy.</span>
           </h1>
           <p className="text-base md:text-lg text-dim leading-relaxed max-w-2xl">
-            How ALTCTRL Solutions collects, uses, stores and protects personal information in the course of delivering IT repair, BitLocker recovery and remote rescue services.
+            How ALTCTRL Solutions collects, uses, stores and protects personal information through this website, our RetinaLoop pilot program, and our IT repair, BitLocker recovery and remote rescue services.
           </p>
           <div className="mt-6 text-[12px] tracking-[3px] text-faint uppercase">Effective: {updated}</div>
         </div>
@@ -120,7 +132,8 @@ const Privacy = () => {
           <div className="bg-surface2 border border-border rounded-md p-6 mb-10">
             <div className="text-[11px] tracking-[3px] text-faint uppercase mb-2">// scope</div>
             <p className="text-sm text-dim leading-relaxed">
-              This policy applies only to the <strong className="text-foreground font-medium">IT Services</strong> division of ALTCTRL Solutions. ALTCTRL / AI Labs operates under a separate policy provided directly to design partners.
+              This policy covers the <strong className="text-foreground font-medium">altctrl.run website</strong>, including the pilot and contact forms, and our <strong className="text-foreground font-medium">IT Services</strong> work. Patient data inside our products is covered by each clinic's agreement and our{" "}
+              <Link to="/security" className="text-primary underline underline-offset-2">security page</Link>.
             </p>
           </div>
 

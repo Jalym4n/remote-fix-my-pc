@@ -1,4 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { PRODUCT_NAME } from "@/lib/site";
 
 const About = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -11,10 +12,10 @@ const About = () => {
           <div>
             <div className="text-[13px] tracking-[4px] text-faint uppercase mb-3">// the lab</div>
             <div className="font-display text-[clamp(44px,5vw,64px)] text-foreground tracking-[2px] mb-8">
-              A focused lab.<br /><span className="text-primary">Not a consultancy.</span>
+              Our research arm.<br /><span className="text-primary">Where products start.</span>
             </div>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">
-              ALTCTRL Solutions is an independent technical lab focused exclusively on <strong className="text-foreground font-normal">clinical AI infrastructure</strong>. We design, deploy, and maintain the systems that allow healthcare teams to use modern language models safely and accountably.
+              ALTCTRL Labs is our research arm. We prototype <strong className="text-foreground font-normal">clinical software and private AI infrastructure</strong> with design partners, and the best ideas become products like {PRODUCT_NAME}.
             </p>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-5">
               Our work spans the full stack — from GPU provisioning and model fine-tuning, through retrieval pipelines and evaluation harnesses, up to the clinician-facing interfaces that gate model output behind human review.
@@ -25,8 +26,8 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-px bg-border border border-border mt-10">
               {[
-                { num: "HIPAA", label: "Aligned design" },
-                { num: "SOC2", label: "Ready controls" },
+                { num: "PHIPA", label: "Designed for" },
+                { num: "CA", label: "Data residency" },
                 { num: "Multi", label: "Cloud (GCP·AWS·Azure)" },
                 { num: "IaC", label: "Terraform-managed" },
               ].map((s) => (
@@ -36,6 +37,7 @@ const About = () => {
                 </div>
               ))}
             </div>
+            <p className="text-xs text-faint mt-4">Designs can also follow HIPAA principles for US partners.</p>
           </div>
 
           {/* Architecture diagram card */}

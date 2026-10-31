@@ -2,11 +2,14 @@
 // Updates <title>, meta description, canonical, and Open Graph tags so each
 // route presents a unique preview to crawlers and social platforms.
 
+import { DEFAULT_OG_IMAGE } from "@/lib/site";
+
 type SEOOptions = {
   title: string;
   description: string;
   canonical: string; // absolute URL
   ogType?: string;
+  ogImage?: string; // absolute URL, defaults to the site-wide OG image
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 };
 
@@ -53,7 +56,7 @@ const upsertRouteJsonLd = (data?: Record<string, unknown> | Record<string, unkno
   document.head.appendChild(script);
 };
 
-export const applySEO = ({ title, description, canonical, ogType = "website", jsonLd }: SEOOptions) => {
+export const applySEO = ({ title, description, canonical, ogType = "website", ogImage = DEFAULT_OG_IMAGE, jsonLd }: SEOOptions) => {
   document.title = title;
   upsertMetaByName("description", description);
   upsertCanonical(canonical);
@@ -61,10 +64,40 @@ export const applySEO = ({ title, description, canonical, ogType = "website", js
   upsertMetaByProperty("og:description", description);
   upsertMetaByProperty("og:url", canonical);
   upsertMetaByProperty("og:type", ogType);
+  upsertMetaByProperty("og:image", ogImage);
   upsertMetaByName("twitter:title", title);
   upsertMetaByName("twitter:description", description);
+  upsertMetaByName("twitter:image", ogImage);
   upsertRouteJsonLd(jsonLd);
 };
+
+export const organizationJsonLd = () => ({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://altctrl.run/#org",
+  name: "ALTCTRL Solutions",
+  url: "https://altctrl.run/",
+  email: "jaleed01@altctrl.run",
+  telephone: "+1-647-643-7979",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mississauga",
+    addressRegion: "ON",
+    addressCountry: "CA",
+  },
+});
+
+export const softwareApplicationJsonLd = (name: string) => ({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Windows 10, Windows 11",
+  url: "https://altctrl.run/products/retinaloop",
+  description:
+    "Diabetic eye-care recall, family doctor report-back and triaged referral software for optometry and retina clinics in Ontario. Pilot program.",
+  publisher: { "@type": "Organization", "@id": "https://altctrl.run/#org", name: "ALTCTRL Solutions" },
+});
 
 export const faqJsonLd = (faqs: { q: string; a: string }[]) => ({
   "@context": "https://schema.org",
@@ -85,7 +118,14 @@ export const localBusinessJsonLd = () => ({
   email: "jaleed01@altctrl.run",
   telephone: "+1-647-643-7979",
   priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mississauga",
+    addressRegion: "ON",
+    addressCountry: "CA",
+  },
   areaServed: [
+    { "@type": "City", name: "Mississauga" },
     { "@type": "Place", name: "Greater Toronto and Hamilton Area" },
     { "@type": "Place", name: "Worldwide (remote rescue)" },
   ],

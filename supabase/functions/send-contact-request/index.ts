@@ -11,7 +11,19 @@ const BodySchema = z.object({
   urgency: z.string().trim().max(80).optional().default('Standard'),
   message: z.string().trim().min(1).max(5000),
   source: z.string().trim().max(80).optional().default('get-help'),
+  // Optional routing intent. Mapped server-side to a fixed subject prefix,
+  // so the client can never inject arbitrary subject text.
+  intent: z.string().trim().max(40).optional().default(''),
 })
+
+const INTENT_PREFIX: Record<string, string> = {
+  'pilot-od': '[PILOT-OD]',
+  'pilot-ret': '[PILOT-RET]',
+  'biz-it': '[BIZ-IT]',
+  'home-it': '[HOME-IT]',
+  'labs': '[LABS]',
+  'press': '[PRESS]',
+}
 
 const escapeHtml = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!))
@@ -32,7 +44,8 @@ Deno.serve(async (req) => {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     }
-    const { name, contact, clientType, urgency, message, source } = parsed.data
+    const { name, contact, clientType, urgency, message, source, intent } = parsed.data
+    const prefix = INTENT_PREFIX[intent] ?? ''
 
     // Detect email vs phone in the contact field for storage
     const looksLikeEmail = /@/.test(contact)
@@ -48,7 +61,7 @@ Deno.serve(async (req) => {
       name,
       email,
       phone,
-      subject: `${clientType || 'Unspecified'} · ${urgency}`,
+      subject: prefix ? `${prefix} ${clientType || 'Unspecified'}` : `${clientType || 'Unspecified'} · ${urgency}`,
       message,
       source,
     })
@@ -61,6 +74,7 @@ Deno.serve(async (req) => {
       <p><strong>Client type:</strong> ${escapeHtml(clientType || '—')}</p>
       <p><strong>Urgency:</strong> ${escapeHtml(urgency)}</p>
       <p><strong>Source:</strong> ${escapeHtml(source)}</p>
+      ${prefix ? `<p><strong>Intent:</strong> ${escapeHtml(prefix)}</p>` : ''}
       <hr/>
       <p><strong>Message:</strong></p>
       <pre style="font-family:inherit;white-space:pre-wrap">${escapeHtml(message)}</pre>
@@ -77,7 +91,9 @@ Deno.serve(async (req) => {
         from: 'ALTCTRL Site <onboarding@resend.dev>',
         to: ['jaleed.a@altctrl.run'],
         reply_to: looksLikeEmail ? contact : undefined,
-        subject: `[${urgency}] Help request from ${name}`,
+        subject: prefix
+          ? `${prefix} ${source === 'retinaloop-pilot' ? 'Pilot request' : 'Enquiry'} from ${name}`
+          : `[${urgency}] Help request from ${name}`,
         html,
       }),
     })

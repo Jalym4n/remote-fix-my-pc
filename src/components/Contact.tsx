@@ -14,7 +14,7 @@ const Contact = () => {
               Beta &amp;<br /><span className="text-green">Design Partners</span>
             </div>
             <p className="text-sm text-dim leading-relaxed tracking-[0.5px] mb-8">
-              Our Beta programme is open to a limited number of clinical and research teams. Share a short description of your workflow and target environment, and a member of the lab will be in touch.
+              Our Beta programme is open to a limited number of clinical and research teams. Share a short description of your workflow and target environment, and we'll be in touch within one business day.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -22,7 +22,7 @@ const Contact = () => {
                 { icon: "📧", label: "Direct", val: "jaleed01@altctrl.run" },
                 { icon: "🌐", label: "Domain", val: "altctrl.run" },
                 { icon: "☁️", label: "Deployment", val: "GCP · AWS · Azure" },
-                { icon: "🛡️", label: "Compliance", val: "HIPAA-aligned · SOC2-ready" },
+                { icon: "🛡️", label: "Privacy", val: "Designed for PHIPA · Canadian data residency" },
                 { icon: "🕐", label: "Response", val: "Within one business day" },
               ].map((m) => (
                 <div key={m.label} className="flex items-center gap-4 p-4 bg-surface-2 border border-border hover:border-primary transition-colors">

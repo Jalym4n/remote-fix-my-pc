@@ -1,7 +1,7 @@
 const TrustBar = () => {
   const items = [
-    { icon: "🛡️", text: "HIPAA-aligned architecture" },
-    { icon: "🔐", text: "SOC2-ready controls" },
+    { icon: "🛡️", text: "Designed for PHIPA" },
+    { icon: "🍁", text: "Canadian data residency" },
     { icon: "☁️", text: "Cloud-native (GCP · AWS · Azure)" },
     { icon: "🧠", text: "Clinical LLM fine-tuning" },
     { icon: "⚙️", text: "Infrastructure-as-Code (Terraform)" },

@@ -1,5 +1,7 @@
 
 
+import { PRODUCT_NAME } from "@/lib/site";
+
 const Hero = () => {
   return (
     <section className="w-full bg-background relative overflow-hidden px-6 md:px-20 py-16 md:py-20">
@@ -14,12 +16,13 @@ const Hero = () => {
             Private Beta · In Development
           </div>
 
-          <h2 className="font-display text-[clamp(34px,4.8vw,56px)] leading-[1.05] text-foreground tracking-[-0.02em] mb-5">
+          <div className="font-mono text-[12px] tracking-[3px] text-faint uppercase mb-3">// ALTCTRL / Labs</div>
+          <h1 className="font-display text-[clamp(34px,4.8vw,56px)] leading-[1.05] text-foreground tracking-[-0.02em] mb-5">
             Clinical AI infrastructure, <span className="text-accent">engineered for trust.</span>
-          </h2>
+          </h1>
 
           <p className="text-base text-dim leading-relaxed max-w-xl mb-6">
-            ALTCTRL / AI Labs is our R&amp;D division. We build secure, <strong className="text-foreground font-medium">HIPAA-aligned RAG architectures</strong> and fine-tune open-weight models for clinical decision support — deployed inside our partners' own cloud tenancies.
+            ALTCTRL Labs is our research arm. We prototype clinical software and private AI infrastructure with design partners, and the best ideas become products like {PRODUCT_NAME}. Designed for <strong className="text-foreground font-medium">PHIPA</strong>, with <strong className="text-foreground font-medium">Canadian data residency</strong>.
           </p>
 
           <div className="border border-accent/40 bg-accent/5 px-5 py-4 mb-8 max-w-lg rounded-md">
@@ -47,7 +50,7 @@ const Hero = () => {
                 <div className="w-2 h-2 rounded-full bg-green animate-pulse-dot" />
                 <span className="text-[13px] text-foreground font-medium tracking-tight">Triage Inference</span>
               </div>
-              <span className="text-[11px] text-faint font-mono uppercase tracking-wider">beta · simulated</span>
+              <span className="text-[11px] text-faint font-mono uppercase tracking-wider">Concept preview</span>
             </div>
 
             <div className="p-5 space-y-4">

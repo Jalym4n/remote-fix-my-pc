@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { applySEO, faqJsonLd, localBusinessJsonLd } from "@/lib/seo";
+import { PRODUCT_NAME, PRODUCT_PATH } from "@/lib/site";
 
 /**
  * Business IT — Google Ads-safe landing page.
@@ -47,7 +48,22 @@ const services = [
   {
     id: "compliance",
     t: "Compliance-aware data handling",
-    d: "Procedures aligned with HIPAA-style data-handling expectations for clinical and professional practices: encrypted-in-transit transfer, access logging, and secure media disposal.",
+    d: "Procedures shaped around Ontario PHIPA expectations for clinical and professional practices: encrypted-in-transit transfer, access logging, and secure media disposal.",
+  },
+];
+
+const clinicServices = [
+  {
+    t: "Workstation & network setup",
+    d: "Front-desk, exam-room and back-office PCs on a clean, segmented clinic network with business-grade Wi-Fi.",
+  },
+  {
+    t: "Imaging-device PC support",
+    d: "Support for the PCs that run fundus cameras, OCT and other imaging devices: drivers, updates, storage and network shares.",
+  },
+  {
+    t: "Secure fax & backup",
+    d: "Secure e-fax setup and tested, encrypted backups so referrals, reports and records are never a single point of failure.",
   },
 ];
 
@@ -85,6 +101,7 @@ const BusinessIT = () => {
   const hero = useScrollReveal();
   const cat = useScrollReveal();
   const proc = useScrollReveal();
+  const clinics = useScrollReveal();
   const pricing = useScrollReveal();
   const faq = useScrollReveal();
   const cta = useScrollReveal();
@@ -196,6 +213,30 @@ const BusinessIT = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* IT for healthcare clinics */}
+      <section id="clinics" className="scroll-mt-32 px-6 md:px-20 py-20 md:py-24 bg-background border-t border-border">
+        <div ref={clinics.ref} className={`relative z-[1] max-w-6xl mx-auto ${clinics.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
+          <div className="text-[12px] tracking-[4px] text-faint uppercase mb-3">// healthcare clinics</div>
+          <h2 className="font-display text-[clamp(30px,4vw,46px)] tracking-[-0.02em] mb-4 max-w-3xl">
+            IT for <span className="text-primary">healthcare clinics.</span>
+          </h2>
+          <p className="text-base text-dim leading-relaxed max-w-2xl mb-10">
+            Clinics run on a mix of front-desk PCs, imaging devices, fax lines and backups that all have to work before the first patient arrives. We set them up and keep them running.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+            {clinicServices.map((c) => (
+              <div key={c.t} className="bg-surface2 border border-border rounded-md p-7">
+                <div className="font-display text-xl text-foreground mb-3">{c.t}</div>
+                <p className="text-sm text-dim leading-relaxed">{c.d}</p>
+              </div>
+            ))}
+          </div>
+          <Link to={PRODUCT_PATH} className="inline-flex items-center gap-2 text-sm text-foreground border border-primary/40 bg-primary/5 px-4 py-3 rounded-md hover:border-primary transition-colors">
+            Using {PRODUCT_NAME}? <span className="text-primary">We can set up your clinic PCs too. →</span>
+          </Link>
         </div>
       </section>
 

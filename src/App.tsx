@@ -14,6 +14,12 @@ import Privacy from "./pages/Privacy.tsx";
 import NoFixNoFee from "./pages/NoFixNoFee.tsx";
 import DataRecovery from "./pages/DataRecovery.tsx";
 import BusinessIT from "./pages/BusinessIT.tsx";
+import Products from "./pages/Products.tsx";
+import RetinaLoop from "./pages/RetinaLoop.tsx";
+import ServicesPage from "./pages/Services.tsx";
+import Company from "./pages/Company.tsx";
+import Security from "./pages/Security.tsx";
+import ScrollManager from "./components/ScrollManager.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollManager />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/bitlocker-recovery" element={<BitlockerRecovery />} />
@@ -34,6 +41,11 @@ const App = () => (
           <Route path="/no-fix-no-fee" element={<NoFixNoFee />} />
           <Route path="/data-recovery" element={<DataRecovery />} />
           <Route path="/business-it" element={<BusinessIT />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/retinaloop" element={<RetinaLoop />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/security" element={<Security />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
